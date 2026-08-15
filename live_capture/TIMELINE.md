@@ -1232,6 +1232,87 @@ lights off" idle state**, distinct from the `STATIC`/`BREATH`/
 Does not change the standing conclusion that lighting control itself is
 100% USB HID.
 
+## Full end-to-end software architecture, from UI action to USB wire bytes (2026-08-16 01:24:12 IST)
+
+User asked to dig until the complete software-level picture was clear.
+Found `LightingService.exe`'s own log (config in `log4cxx.properties`
+pointed to `C:\ProgramData\ASUS\ARMOURY CRATE Diagnosis\LightingService\
+LightingService.log`, 2.1MB, DEBUG level, not previously opened) and
+traced the call chain all the way from the moment an effect changes
+down to the point where it becomes an HID write. Combined with
+everything already found in `ArmouryCrate.Service`'s log, this is now a
+complete, evidence-backed picture:
+
+```
+User action (Aura Creator / Armoury Crate UI, or a priority switch)
+        |
+        v
+ArmouryCrate.Service (process, "AuraPlugin" module)
+  [ROGAuraInterface][AuraApply]
+        |  serialises current profile as XML (same schema as LastProfile.xml)
+        v
+  [ROGAuraInterface][SendXmlToLightingService]   -- IPC over local socket
+        |
+        v
+  [ROGAuraInterface][SendScriptToLightingService] -- locking wrapper
+        |  (crosses process boundary here)
+        v
+LightingService.exe (separate process, "AsRogAuraService" / aurals_3.10.10)
+  [RogAuraDeviceManager][CreateIndexConverter]
+        |  loads LastProfile.xml via [AuraSettingStore][LoadLastProfile]
+        |  resolves _s0ModeId / m_mode_index (e.g. 100 = Static)
+        v
+  [AuraController][DeviceScanner::EnumerateLightDevice]  -- finds the WDL device
+        |
+        v
+  [AuraController][IndexConvereter::SetAuraLeds]  -- maps logical LED
+        |  indices to physical zone/lamp positions (the 0-15 lamp_id
+        |  scheme from 0B0519B6.csv), then [IndexConvereter::Set_XYZ]
+        |  for spatial coordinate handling
+        v
+  [AacDeviceImp][apply]:
+     "LightCount Success" -> "SetLightColor Success" -> "SetMode Success"
+     -> "Apply Success", ModelName = WDL_NB_KB_4ZONE_RGB_LIGHTING
+        |  ([AuEngine] logs "apply time is less than 64 ms" -- matches
+        |  the ~60ms Report-0x04-pair cadence measured directly from
+        |  USB captures earlier in this file)
+        v
+AacAmbientHal.dll / AacAmbientLighting (HAL layer, consumed via Windows'
+own Windows.Devices.Lights.LampArray WinRT API on MI_01)
+        |  actual HidD_SetFeature-equivalent call happens inside this
+        |  compiled DLL -- not logged as raw bytes anywhere found
+        v
+USB HID wire (device VID_0B05:PID_19B6) -- Report 0x04 (zone RGB),
+Report 0x05 (ambient/strobe), Report 0x5D (GetRGBKBStatus capability
+handshake) -- everything from this point on is exactly what was
+captured and decoded via USBPcap earlier in this file.
+```
+
+**What's now fully explained, with a real source for every layer**:
+- Why the wire protocol looks the way it does (zone/lamp IDs 0-15,
+  8-per-packet splitting) -- `IndexConvereter` is the layer that
+  performs this mapping, using the same lamp geometry as
+  `0B0519B6.csv`.
+- Why `GetRGBKBStatus` (`0x5D`) gets called before colour writes --
+  `AacDeviceImp::apply`'s `LightCount`/`SetMode` steps need the
+  capability data it returns.
+- Why the animation cadence is ~60ms -- `AuEngine`'s own logged timing
+  constraint ("apply time is less than 64 ms"), not just something
+  inferred from packet timestamps.
+- Why ACPI-WMI shows up at all -- only as a CPU-temperature input,
+  entirely separate from this pipeline.
+
+**What's still a black box**: the exact moment `AacAmbientHal.dll`
+converts the resolved LED colours into the literal 51/10/64-byte report
+payloads and calls the OS HID API -- that happens inside compiled code
+with no further plaintext logging found. Getting further than this
+would require disassembling `AacAmbientHal.dll`/`aaHMLib.dll`
+specifically, or attaching a debugger to `LightingService.exe` at the
+moment of an effect change -- not attempted. Everything on the wire side
+of that boundary, however, is already fully captured and decoded
+earlier in this document, so the byte-level protocol itself is not
+missing -- only the DLL-internal code path that produces it.
+
 **Final file sizes (v2 run)**: `usbpcap1_35min_v2.pcapng` 288 B (empty,
 header only -- consistent with prior runs), `usbpcap2_35min_v2.pcapng`
 288 B (empty), `usbpcap3_35min_v2.pcapng` **249,980 B** -- real captured

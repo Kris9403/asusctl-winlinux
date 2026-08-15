@@ -1123,6 +1123,62 @@ sides = 8,9; lower sides = 10,11; bottom edge = 12,13,14,15). This is
 directly usable as a reference zone map for the Linux implementation --
 no more guessing needed for which zone ID is physically where.
 
+## ArmouryCrate.Service plaintext logs -- the 0x5D sub-commands finally explained (2026-08-16 01:18:00 IST)
+
+The two huge service logs (`ARMOURY CRATE Diagnosis\AppLog\
+ArmouryCrate.Service_2026-08-15.log` / `_2026-08-16.log`, ~5.9MB each,
+not previously opened) turned out to contain full plaintext function-
+level tracing -- effectively documenting, in human-readable form,
+everything that was previously only visible as raw hex on the wire.
+
+**`GetRGBKBStatus`** (the actual function behind the `0x5D` identity/
+capability handshake): confirmed via log line `usage 0x79 REPORTBYTE0
+0x5d` that this lives specifically in **`MI_00 Col04`** (`UsagePage
+0xFF31, Usage 0x79`), refining the earlier "Col03 or Col04" guess. Logs
+"SetFeature Success" then decodes the read-back Feature report as:
+- `Byte 8 = 1`, `lpReport[9] = 2` -- raw offsets into the response
+- `Keyboard_Years = 0x25` -- likely a manufacture-year-style code
+- `Support Lightbar` -- capability flag
+- `Support DefaultColor` -- capability flag
+- `Support SupportBitFormatKeyPosition` -- capability flag
+- `Model Type : Strix` -- the laptop's model family, read directly off
+  the device itself
+
+So the `0x5D` sub-command cycle documented earlier in this file (the
+identity string, then `D1`/`05`/`C0`/`9B`/`9E`/`BD`/`B3`-`B5`/`9F`
+sub-commands) is a genuine **capability negotiation** -- the software is
+asking the hardware what it supports (lightbar? default-colour effects?
+bit-format key positions?) and what model/generation it is, before
+proceeding. This finally gives semantic meaning to bytes that were
+previously just decoded structurally.
+
+**Also confirmed directly from the logs**: exact model name `G615LR`
+and firmware version `534` (`[CheckSlashFWReadyToWrite] Slash model
+name = G615LR, Slash FW Version = 534`). "Slash" is ASUS's separate
+lid-display product line: `Slash shares HID with AURA, using unified
+lock` -- confirms Slash and Aura share the same HID device/locking, but
+this particular unit has no Slash hardware (`Didn't get any slash
+device`).
+
+**`NBFWRunmodeReadback` + `ChooseHidpathForECRunmodeReadback` -- directly
+answers the original NeroReflex ACPI/EC question, but via HID, not
+ACPI.** Log line: `[NBFWRunmodeReadback] Add mode STROBING`, immediately
+followed by `[ChooseHidpathForECRunmodeReadback] From LightingHidPath`.
+This is the software reading back the **embedded controller's current
+run-mode state** -- exactly the kind of "EC state" NeroReflex originally
+asked about -- but it does so **through the USB HID `LightingHidPath`**,
+not through ACPI-WMI. This is genuinely new confirmation of *how* EC
+run-mode readback actually happens on this hardware, and it's fully
+consistent with (not contradicting) the earlier WMI-Activity finding
+that ACPI/WMI is uninvolved -- the EC conversation happens entirely over
+the same HID channel already reverse-engineered.
+
+**Full canonical run-mode vocabulary** (searched both days' logs for
+every `Add mode X` value): **`STATIC`, `BREATH`, `RAINBOW`,
+`STROBING`, `COLORCYCLE`** -- five modes total. Four match effects
+already tested this session (static/breathing/rainbow/strobing);
+`COLORCYCLE` was never explicitly triggered/captured.
+
 **Final file sizes (v2 run)**: `usbpcap1_35min_v2.pcapng` 288 B (empty,
 header only -- consistent with prior runs), `usbpcap2_35min_v2.pcapng`
 288 B (empty), `usbpcap3_35min_v2.pcapng` **249,980 B** -- real captured

@@ -1,0 +1,544 @@
+Opened log file 'C:\Users\Krushna\AppData\Local\Temp\claude\hidtool\windbg_ioctl2_21d8_2026-08-16_01-48-04-885.log'
+0:027> bp KERNELBASE!DeviceIoControl "dd @esp+8 L1; db poi(@esp+0xc) L40; g"
+0:027> g
+2026-08-16 01:48:14,181 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::ServiceFunctionWrapper] In. (for put_SetProfile)
+
+2026-08-16 01:48:14,181 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::put_SetProfile] cs_initialized(1), before cs In.
+
+2026-08-16 01:48:14,183 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::put_SetProfile] Checking RogAuraDeviceManager initailization state...
+
+2026-08-16 01:48:14,184 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] In.
+2026-08-16 01:48:14,184 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] m_isInitialized ==> 0
+
+2026-08-16 01:48:14,184 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::put_SetProfile] In.
+
+2026-08-16 01:48:14,184 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::PreventSleepState] In.
+2026-08-16 01:48:14,184 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::PreventSleepState] awayMode ==> 0, _flag ==> 0x80000001.
+2026-08-16 01:48:14,184 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::PreventSleepState] Out.
+
+2026-08-16 01:48:14,185 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetProfile] In.
+2026-08-16 01:48:14,185 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetProfile] Func id = 17
+2026-08-16 01:48:14,185 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetProfile] m_isDeviceConfigDirty = 0
+2026-08-16 01:48:14,185 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::AuraRequireToken] token = (1)
+2026-08-16 01:48:14,199 aurals_3.10.10_6180_22972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] In.
+2026-08-16 01:48:14,200 aurals_3.10.10_6180_22972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] Opening profile succeeded.
+2026-08-16 01:48:14,200 aurals_3.10.10_6180_22972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] Out - 2.
+
+2026-08-16 01:48:14,201 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetProfile] mode key = 100, set to 100
+2026-08-16 01:48:14,201 aurals_3.10.10_6180_22972 - [AuraSettingStore][AuraSettingStore::SaveLastProfile] In.
+2026-08-16 01:48:14,207 aurals_3.10.10_6180_22972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] In.
+2026-08-16 01:48:14,214 aurals_3.10.10_6180_22972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] Opening profile succeeded.
+2026-08-16 01:48:14,215 aurals_3.10.10_6180_22972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] Out - 2.
+
+2026-08-16 01:48:14,215 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetProfile] Out.
+
+2026-08-16 01:48:14,216 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::put_SetProfile] _setProfileResult (phase I) = 1
+2026-08-16 01:48:14,216 aurals_3.10.10_6180_22972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] In.
+2026-08-16 01:48:14,216 aurals_3.10.10_6180_22972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] Opening profile succeeded.
+2026-08-16 01:48:14,216 aurals_3.10.10_6180_22972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] Out - 2.
+
+2026-08-16 01:48:14,217 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::put_SetProfile] _result = 00000000
+2026-08-16 01:48:14,217 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::RestoreSleepState] In.
+2026-08-16 01:48:14,218 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::RestoreSleepState] Out.
+
+2026-08-16 01:48:14,219 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::ResetKillRequestState] In.
+2026-08-16 01:48:14,219 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::ResetKillRequestState] m_killRequest ==> 0
+2026-08-16 01:48:14,219 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::put_SetProfile] Out.
+
+2026-08-16 01:48:14,220 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] In.
+2026-08-16 01:48:14,220 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] m_isInitialized ==> 1
+
+2026-08-16 01:48:14,221 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::ServiceFunctionWrapper] Out. (for put_SetProfile)
+
+2026-08-16 01:48:14,224 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::ServiceFunctionWrapper] In. (for put_SetScript)
+
+2026-08-16 01:48:14,224 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::put_SetScript] cs_initialized(1), before cs In.
+
+2026-08-16 01:48:14,224 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::put_SetScript] Checking RogAuraDeviceManager initailization state...
+
+2026-08-16 01:48:14,225 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] In.
+2026-08-16 01:48:14,225 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] m_isInitialized ==> 0
+
+2026-08-16 01:48:14,225 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::put_SetScript] In.
+
+2026-08-16 01:48:14,226 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetScript] In.
+2026-08-16 01:48:14,226 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] In.
+2026-08-16 01:48:14,226 aurals_3.10.10_6180_22972 - [DeviceSyncExecuter][DeviceSyncExecuter::Stop] finish wait thread stop sync1.
+
+2026-08-16 01:48:14,227 aurals_3.10.10_6180_22972 - [AuEngine] Stopping...
+
+2026-08-16 01:48:14,227 aurals_3.10.10_6180_22972 - [Watchdog] Stop()
+
+2026-08-16 01:48:14,227 aurals_3.10.10_6180_18736 - [Watchdog] ThreadFunc finish
+
+2026-08-16 01:48:14,228 aurals_3.10.10_6180_22972 - [Watchdog] Stopped
+
+2026-08-16 01:48:14,228 aurals_3.10.10_6180_22972 - [AuEngine] m_hThread != NULL
+
+2026-08-16 01:48:14,229 aurals_3.10.10_6180_32372 - [AuEngine] AuEngineThread finish
+
+2026-08-16 01:48:14,229 aurals_3.10.10_6180_22972 - [AuEngine] Lock acquire for clearStack
+2026-08-16 01:48:14,230 aurals_3.10.10_6180_22972 - [AuEngine] Stopped
+
+2026-08-16 01:48:14,230 aurals_3.10.10_6180_22972 - [AuEngine] Stopping...
+
+2026-08-16 01:48:14,230 aurals_3.10.10_6180_22972 - [Watchdog] Stop()
+
+2026-08-16 01:48:14,231 aurals_3.10.10_6180_22972 - [Watchdog] Stopped
+
+2026-08-16 01:48:14,231 aurals_3.10.10_6180_22972 - [AuEngine] Lock acquire for clearStack
+2026-08-16 01:48:14,231 aurals_3.10.10_6180_22972 - [AuEngine] Stopped
+
+2026-08-16 01:48:14,231 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] m_sync->Stop() - done.
+2026-08-16 01:48:14,232 aurals_3.10.10_6180_22972 - [MusicEffectExecuter][MusicEffectExecuter::SetToDefaultECState_Stop] In.
+
+2026-08-16 01:48:14,232 aurals_3.10.10_6180_22972 - [AudioReceiver][AudioReceiver::SetToDefaultECState_Stop] start wait thread stop audio receiver.
+2026-08-16 01:48:14,232 aurals_3.10.10_6180_22972 - [AudioReceiver][AudioReceiver::SetToDefaultECState_Stop] finish wait thread stop audio receiver.
+
+2026-08-16 01:48:14,232 aurals_3.10.10_6180_22972 - [AudioEffect][AudioEffect::SetToDefaultECState_Stop] finish wait thread stop music2.
+
+2026-08-16 01:48:14,232 aurals_3.10.10_6180_22972 - [MusicEffectExecuter][MusicEffectExecuter::SetToDefaultECState_Stop] Out.
+
+2026-08-16 01:48:14,232 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] m_music->SetToDefaultECState_Stop() - done.
+2026-08-16 01:48:14,232 aurals_3.10.10_6180_22972 - [ThermalEffectExecuter][ThermalEffectExecuter::Stop] finish wait thread stop thermal.
+
+2026-08-16 01:48:14,233 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] m_thermal->Stop() - done.
+2026-08-16 01:48:14,241 aurals_3.10.10_6180_22972 - [TempEffectExecuter][TemporaryEffectExecuter::Stop] finish wait thread stop temp.
+
+2026-08-16 01:48:14,242 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] m_temp->Stop() - done.
+2026-08-16 01:48:14,242 aurals_3.10.10_6180_22972 - [HueEffectExecuter][HueEffectExecuter::Stop] In.
+2026-08-16 01:48:14,243 aurals_3.10.10_6180_22972 - [HueEffectExecuter][HueEffectExecuter::Stop] Out.
+
+2026-08-16 01:48:14,243 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] m_hue->Stop() - done.
+2026-08-16 01:48:14,243 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] Out.
+
+2026-08-16 01:48:14,243 aurals_3.10.10_6180_22972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartLuaEngine] In LuaEngine.
+2026-08-16 01:48:14,243 aurals_3.10.10_6180_22972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] StartAuraEngine in
+2026-08-16 01:48:14,243 aurals_3.10.10_6180_22972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] =========== EnemerateAacDevice ============
+2026-08-16 01:48:14,243 aurals_3.10.10_6180_22972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] push below device into engine :
+2026-08-16 01:48:14,243 aurals_3.10.10_6180_22972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] WDL_NB_KB_4ZONE_RGB_LIGHTING
+2026-08-16 01:48:14,245 aurals_3.10.10_6180_22972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] ============ EnemerateAacDevice ============
+2026-08-16 01:48:14,245 aurals_3.10.10_6180_22972 - [ScriptReader] LoadXMLScript
+2026-08-16 01:48:14,245 aurals_3.10.10_6180_22972 - [ScriptReader] get Root Success
+2026-08-16 01:48:14,245 aurals_3.10.10_6180_22972 - [ScriptReader] ParseSignals
+2026-08-16 01:48:14,245 aurals_3.10.10_6180_22972 - [AuEngine] initGlobalSignalProviders Start
+2026-08-16 01:48:14,246 aurals_3.10.10_6180_22972 - [AuSignalProvider] Initial Formula signal provider.
+2026-08-16 01:48:14,246 aurals_3.10.10_6180_22972 - [AuSignalProvider] Initial Keyboard signal provider.
+2026-08-16 01:48:14,246 aurals_3.10.10_6180_22972 - [AuEngine] initGlobalSignalProviders Finish
+2026-08-16 01:48:14,246 aurals_3.10.10_6180_22972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] Create Script Provider
+2026-08-16 01:48:14,246 aurals_3.10.10_6180_22972 - [ScriptEventProvider]initial in
+2026-08-16 01:48:14,247 aurals_3.10.10_6180_22972 - [ScriptEventProvider][check_screenevent] In
+2026-08-16 01:48:14,247 aurals_3.10.10_6180_22972 - [ScriptEventProvider]initViewport in
+2026-08-16 01:48:14,247 aurals_3.10.10_6180_22972 - [ScriptReader] ParseViewportGroup
+2026-08-16 01:48:14,247 aurals_3.10.10_6180_22972 - [ScriptReader] NOT Find WDL_NB_KB_4ZONE_RGB_LIGHTING.csv
+2026-08-16 01:48:14,248 aurals_3.10.10_6180_22972 - [ScriptEventProvider][addDevice2Viewport] In Script type: 0xf7eff
+2026-08-16 01:48:14,248 aurals_3.10.10_6180_22972 - [ScriptEventProvider][addDevice2Viewport] dev->type(): 0xf7eff : script->type(): 0xf7eff
+2026-08-16 01:48:14,249 aurals_3.10.10_6180_22972 - [ScriptEventProvider][addDevice2Viewport] push successed
+
+2026-08-16 01:48:14,249 aurals_3.10.10_6180_22972 - [ScriptEventProvider]initViewport out
+2026-08-16 01:48:14,249 aurals_3.10.10_6180_22972 - [ScriptEventProvider]initProvider in
+2026-08-16 01:48:14,249 aurals_3.10.10_6180_22972 - [ScriptReader] ParseProviderEx
+2026-08-16 01:48:14,250 aurals_3.10.10_6180_22972 - [ScriptEventProvider]initProvider out
+2026-08-16 01:48:14,250 aurals_3.10.10_6180_22972 - [EventProvider] connectSignals() 
+
+2026-08-16 01:48:14,251 aurals_3.10.10_6180_22972 - [ScriptEventProvider]initial out
+2026-08-16 01:48:14,251 aurals_3.10.10_6180_22972 - [AuEngine] Start()
+
+2026-08-16 01:48:14,251 aurals_3.10.10_6180_22972 - [Watchdog] Start()
+
+2026-08-16 01:48:14,252 aurals_3.10.10_6180_22972 - [Watchdog] End()
+
+2026-08-16 01:48:14,254 aurals_3.10.10_6180_22972 - [AuEngine] start to estimate time takeout
+
+2026-08-16 01:48:14,254 aurals_3.10.10_6180_22972 - [AuEngine] out
+
+2026-08-16 01:48:14,256 aurals_3.10.10_6180_22972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] StartAuraEngine out
+2026-08-16 01:48:14,257 aurals_3.10.10_6180_22972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartLuaEngine] Out LuaEngine.
+2026-08-16 01:48:14,258 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetScript] Out.
+
+2026-08-16 01:48:14,258 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::put_SetScript] Out.
+
+2026-08-16 01:48:14,259 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] In.
+2026-08-16 01:48:14,259 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] m_isInitialized ==> 1
+
+2026-08-16 01:48:14,259 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::ServiceFunctionWrapper] Out. (for put_SetScript)
+
+2026-08-16 01:48:14,260 aurals_3.10.10_6180_27592 - [AuEngine] time_offset = 0.016000
+
+2026-08-16 01:48:14,260 aurals_3.10.10_6180_27592 - [AacDeviceImp][apply] LightCount Success, ModelName = WDL_NB_KB_4ZONE_RGB_LIGHTING
+2026-08-16 01:48:14,261 aurals_3.10.10_6180_27592 - [AacDeviceImp][apply] SetLightColor Success, ModelName = WDL_NB_KB_4ZONE_RGB_LIGHTING
+2026-08-16 01:48:14,261 aurals_3.10.10_6180_27592 - [AacDeviceImp][apply] SetMode Success, ModelName = WDL_NB_KB_4ZONE_RGB_LIGHTING
+2026-08-16 01:48:14,261 aurals_3.10.10_6180_27592 - [AacDeviceImp][apply] Apply Success, ModelName = WDL_NB_KB_4ZONE_RGB_LIGHTING
+2026-08-16 01:48:14,764 aurals_3.10.10_6180_27592 - [AuEngine] apply time is less than 64 ms
+
+2026-08-16 01:48:16,828 aurals_3.10.10_6180_12972 - [ServiceMediator][CServiceMediator::ServiceFunctionWrapper] In. (for put_SetProfile)
+
+2026-08-16 01:48:16,828 aurals_3.10.10_6180_12972 - [ServiceMediator][CServiceMediator::put_SetProfile] cs_initialized(1), before cs In.
+
+2026-08-16 01:48:16,830 aurals_3.10.10_6180_12972 - [ServiceMediator][CServiceMediator::put_SetProfile] Checking RogAuraDeviceManager initailization state...
+
+2026-08-16 01:48:16,830 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] In.
+2026-08-16 01:48:16,831 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] m_isInitialized ==> 0
+
+2026-08-16 01:48:16,831 aurals_3.10.10_6180_12972 - [ServiceMediator][CServiceMediator::put_SetProfile] In.
+
+2026-08-16 01:48:16,832 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::PreventSleepState] In.
+2026-08-16 01:48:16,832 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::PreventSleepState] awayMode ==> 0, _flag ==> 0x80000001.
+2026-08-16 01:48:16,832 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::PreventSleepState] Out.
+
+2026-08-16 01:48:16,833 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetProfile] In.
+2026-08-16 01:48:16,833 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetProfile] Func id = 17
+2026-08-16 01:48:16,833 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetProfile] m_isDeviceConfigDirty = 0
+2026-08-16 01:48:16,834 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::AuraRequireToken] token = (1)
+2026-08-16 01:48:16,847 aurals_3.10.10_6180_12972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] In.
+2026-08-16 01:48:16,847 aurals_3.10.10_6180_12972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] Opening profile succeeded.
+2026-08-16 01:48:16,849 aurals_3.10.10_6180_12972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] Out - 2.
+
+2026-08-16 01:48:16,849 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetProfile] mode key = 100, set to 100
+2026-08-16 01:48:16,851 aurals_3.10.10_6180_12972 - [AuraSettingStore][AuraSettingStore::SaveLastProfile] In.
+2026-08-16 01:48:16,862 aurals_3.10.10_6180_12972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] In.
+2026-08-16 01:48:16,863 aurals_3.10.10_6180_12972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] Opening profile succeeded.
+2026-08-16 01:48:16,863 aurals_3.10.10_6180_12972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] Out - 2.
+
+2026-08-16 01:48:16,864 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetProfile] Out.
+
+2026-08-16 01:48:16,864 aurals_3.10.10_6180_12972 - [ServiceMediator][CServiceMediator::put_SetProfile] _setProfileResult (phase I) = 1
+2026-08-16 01:48:16,864 aurals_3.10.10_6180_12972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] In.
+2026-08-16 01:48:16,864 aurals_3.10.10_6180_12972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] Opening profile succeeded.
+2026-08-16 01:48:16,864 aurals_3.10.10_6180_12972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] Out - 2.
+
+2026-08-16 01:48:16,865 aurals_3.10.10_6180_12972 - [ServiceMediator][CServiceMediator::put_SetProfile] _result = 00000000
+2026-08-16 01:48:16,865 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::RestoreSleepState] In.
+2026-08-16 01:48:16,866 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::RestoreSleepState] Out.
+
+2026-08-16 01:48:16,867 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::ResetKillRequestState] In.
+2026-08-16 01:48:16,867 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::ResetKillRequestState] m_killRequest ==> 0
+2026-08-16 01:48:16,867 aurals_3.10.10_6180_12972 - [ServiceMediator][CServiceMediator::put_SetProfile] Out.
+
+2026-08-16 01:48:16,867 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] In.
+2026-08-16 01:48:16,868 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] m_isInitialized ==> 1
+
+2026-08-16 01:48:16,868 aurals_3.10.10_6180_12972 - [ServiceMediator][CServiceMediator::ServiceFunctionWrapper] Out. (for put_SetProfile)
+
+2026-08-16 01:48:16,872 aurals_3.10.10_6180_12972 - [ServiceMediator][CServiceMediator::ServiceFunctionWrapper] In. (for put_SetScript)
+
+2026-08-16 01:48:16,872 aurals_3.10.10_6180_12972 - [ServiceMediator][CServiceMediator::put_SetScript] cs_initialized(1), before cs In.
+
+2026-08-16 01:48:16,872 aurals_3.10.10_6180_12972 - [ServiceMediator][CServiceMediator::put_SetScript] Checking RogAuraDeviceManager initailization state...
+
+2026-08-16 01:48:16,873 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] In.
+2026-08-16 01:48:16,873 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] m_isInitialized ==> 0
+
+2026-08-16 01:48:16,873 aurals_3.10.10_6180_12972 - [ServiceMediator][CServiceMediator::put_SetScript] In.
+
+2026-08-16 01:48:16,874 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetScript] In.
+2026-08-16 01:48:16,874 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] In.
+2026-08-16 01:48:16,874 aurals_3.10.10_6180_12972 - [DeviceSyncExecuter][DeviceSyncExecuter::Stop] finish wait thread stop sync1.
+
+2026-08-16 01:48:16,875 aurals_3.10.10_6180_12972 - [AuEngine] Stopping...
+
+2026-08-16 01:48:16,875 aurals_3.10.10_6180_12972 - [Watchdog] Stop()
+
+2026-08-16 01:48:16,876 aurals_3.10.10_6180_588 - [Watchdog] ThreadFunc finish
+
+2026-08-16 01:48:16,877 aurals_3.10.10_6180_12972 - [Watchdog] Stopped
+
+2026-08-16 01:48:16,877 aurals_3.10.10_6180_12972 - [AuEngine] m_hThread != NULL
+
+2026-08-16 01:48:16,877 aurals_3.10.10_6180_27592 - [AuEngine] AuEngineThread finish
+
+2026-08-16 01:48:16,878 aurals_3.10.10_6180_12972 - [AuEngine] Lock acquire for clearStack
+2026-08-16 01:48:16,879 aurals_3.10.10_6180_12972 - [AuEngine] Stopped
+
+2026-08-16 01:48:16,879 aurals_3.10.10_6180_12972 - [AuEngine] Stopping...
+
+2026-08-16 01:48:16,879 aurals_3.10.10_6180_12972 - [Watchdog] Stop()
+
+2026-08-16 01:48:16,880 aurals_3.10.10_6180_12972 - [Watchdog] Stopped
+
+2026-08-16 01:48:16,880 aurals_3.10.10_6180_12972 - [AuEngine] Lock acquire for clearStack
+2026-08-16 01:48:16,880 aurals_3.10.10_6180_12972 - [AuEngine] Stopped
+
+2026-08-16 01:48:16,880 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] m_sync->Stop() - done.
+2026-08-16 01:48:16,880 aurals_3.10.10_6180_12972 - [MusicEffectExecuter][MusicEffectExecuter::SetToDefaultECState_Stop] In.
+
+2026-08-16 01:48:16,880 aurals_3.10.10_6180_12972 - [AudioReceiver][AudioReceiver::SetToDefaultECState_Stop] start wait thread stop audio receiver.
+2026-08-16 01:48:16,881 aurals_3.10.10_6180_12972 - [AudioReceiver][AudioReceiver::SetToDefaultECState_Stop] finish wait thread stop audio receiver.
+
+2026-08-16 01:48:16,888 aurals_3.10.10_6180_12972 - [AudioEffect][AudioEffect::SetToDefaultECState_Stop] finish wait thread stop music2.
+
+2026-08-16 01:48:16,889 aurals_3.10.10_6180_12972 - [MusicEffectExecuter][MusicEffectExecuter::SetToDefaultECState_Stop] Out.
+
+2026-08-16 01:48:16,889 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] m_music->SetToDefaultECState_Stop() - done.
+2026-08-16 01:48:16,889 aurals_3.10.10_6180_12972 - [ThermalEffectExecuter][ThermalEffectExecuter::Stop] finish wait thread stop thermal.
+
+2026-08-16 01:48:16,889 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] m_thermal->Stop() - done.
+2026-08-16 01:48:16,889 aurals_3.10.10_6180_12972 - [TempEffectExecuter][TemporaryEffectExecuter::Stop] finish wait thread stop temp.
+
+2026-08-16 01:48:16,890 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] m_temp->Stop() - done.
+2026-08-16 01:48:16,890 aurals_3.10.10_6180_12972 - [HueEffectExecuter][HueEffectExecuter::Stop] In.
+2026-08-16 01:48:16,890 aurals_3.10.10_6180_12972 - [HueEffectExecuter][HueEffectExecuter::Stop] Out.
+
+2026-08-16 01:48:16,890 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] m_hue->Stop() - done.
+2026-08-16 01:48:16,890 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] Out.
+
+2026-08-16 01:48:16,890 aurals_3.10.10_6180_12972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartLuaEngine] In LuaEngine.
+2026-08-16 01:48:16,891 aurals_3.10.10_6180_12972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] StartAuraEngine in
+2026-08-16 01:48:16,891 aurals_3.10.10_6180_12972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] =========== EnemerateAacDevice ============
+2026-08-16 01:48:16,891 aurals_3.10.10_6180_12972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] push below device into engine :
+2026-08-16 01:48:16,891 aurals_3.10.10_6180_12972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] WDL_NB_KB_4ZONE_RGB_LIGHTING
+2026-08-16 01:48:16,891 aurals_3.10.10_6180_12972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] ============ EnemerateAacDevice ============
+2026-08-16 01:48:16,891 aurals_3.10.10_6180_12972 - [ScriptReader] LoadXMLScript
+2026-08-16 01:48:16,892 aurals_3.10.10_6180_12972 - [ScriptReader] get Root Success
+2026-08-16 01:48:16,892 aurals_3.10.10_6180_12972 - [ScriptReader] ParseSignals
+2026-08-16 01:48:16,892 aurals_3.10.10_6180_12972 - [AuEngine] initGlobalSignalProviders Start
+2026-08-16 01:48:16,892 aurals_3.10.10_6180_12972 - [AuSignalProvider] Initial Formula signal provider.
+2026-08-16 01:48:16,893 aurals_3.10.10_6180_12972 - [AuSignalProvider] Initial Keyboard signal provider.
+2026-08-16 01:48:16,893 aurals_3.10.10_6180_12972 - [AuEngine] initGlobalSignalProviders Finish
+2026-08-16 01:48:16,893 aurals_3.10.10_6180_12972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] Create Script Provider
+2026-08-16 01:48:16,893 aurals_3.10.10_6180_12972 - [ScriptEventProvider]initial in
+2026-08-16 01:48:16,893 aurals_3.10.10_6180_12972 - [ScriptEventProvider][check_screenevent] In
+2026-08-16 01:48:16,893 aurals_3.10.10_6180_12972 - [ScriptEventProvider]initViewport in
+2026-08-16 01:48:16,893 aurals_3.10.10_6180_12972 - [ScriptReader] ParseViewportGroup
+2026-08-16 01:48:16,894 aurals_3.10.10_6180_12972 - [ScriptReader] NOT Find WDL_NB_KB_4ZONE_RGB_LIGHTING.csv
+2026-08-16 01:48:16,894 aurals_3.10.10_6180_12972 - [ScriptEventProvider][addDevice2Viewport] In Script type: 0xf7eff
+2026-08-16 01:48:16,894 aurals_3.10.10_6180_12972 - [ScriptEventProvider][addDevice2Viewport] dev->type(): 0xf7eff : script->type(): 0xf7eff
+2026-08-16 01:48:16,894 aurals_3.10.10_6180_12972 - [ScriptEventProvider][addDevice2Viewport] push successed
+
+2026-08-16 01:48:16,894 aurals_3.10.10_6180_12972 - [ScriptEventProvider]initViewport out
+2026-08-16 01:48:16,894 aurals_3.10.10_6180_12972 - [ScriptEventProvider]initProvider in
+2026-08-16 01:48:16,895 aurals_3.10.10_6180_12972 - [ScriptReader] ParseProviderEx
+2026-08-16 01:48:16,895 aurals_3.10.10_6180_12972 - [ScriptEventProvider]initProvider out
+2026-08-16 01:48:16,895 aurals_3.10.10_6180_12972 - [EventProvider] connectSignals() 
+
+2026-08-16 01:48:16,895 aurals_3.10.10_6180_12972 - [ScriptEventProvider]initial out
+2026-08-16 01:48:16,896 aurals_3.10.10_6180_12972 - [AuEngine] Start()
+
+2026-08-16 01:48:16,896 aurals_3.10.10_6180_12972 - [Watchdog] Start()
+
+2026-08-16 01:48:16,896 aurals_3.10.10_6180_12972 - [Watchdog] End()
+
+2026-08-16 01:48:16,904 aurals_3.10.10_6180_12972 - [AuEngine] start to estimate time takeout
+
+2026-08-16 01:48:16,905 aurals_3.10.10_6180_12972 - [AuEngine] out
+
+2026-08-16 01:48:16,907 aurals_3.10.10_6180_12972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] StartAuraEngine out
+2026-08-16 01:48:16,907 aurals_3.10.10_6180_12972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartLuaEngine] Out LuaEngine.
+2026-08-16 01:48:16,908 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetScript] Out.
+
+2026-08-16 01:48:16,908 aurals_3.10.10_6180_12972 - [ServiceMediator][CServiceMediator::put_SetScript] Out.
+
+2026-08-16 01:48:16,909 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] In.
+2026-08-16 01:48:16,909 aurals_3.10.10_6180_12972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] m_isInitialized ==> 1
+
+2026-08-16 01:48:16,910 aurals_3.10.10_6180_12972 - [ServiceMediator][CServiceMediator::ServiceFunctionWrapper] Out. (for put_SetScript)
+
+2026-08-16 01:48:16,910 aurals_3.10.10_6180_17276 - [AuEngine] time_offset = 0.016000
+
+2026-08-16 01:48:16,910 aurals_3.10.10_6180_17276 - [AacDeviceImp][apply] LightCount Success, ModelName = WDL_NB_KB_4ZONE_RGB_LIGHTING
+2026-08-16 01:48:16,911 aurals_3.10.10_6180_17276 - [AacDeviceImp][apply] SetLightColor Success, ModelName = WDL_NB_KB_4ZONE_RGB_LIGHTING
+2026-08-16 01:48:16,911 aurals_3.10.10_6180_17276 - [AacDeviceImp][apply] SetMode Success, ModelName = WDL_NB_KB_4ZONE_RGB_LIGHTING
+2026-08-16 01:48:16,911 aurals_3.10.10_6180_17276 - [AacDeviceImp][apply] Apply Success, ModelName = WDL_NB_KB_4ZONE_RGB_LIGHTING
+2026-08-16 01:48:17,409 aurals_3.10.10_6180_17276 - [AuEngine] apply time is less than 64 ms
+
+2026-08-16 01:48:18,831 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::ServiceFunctionWrapper] In. (for put_SetProfile)
+
+2026-08-16 01:48:18,831 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::put_SetProfile] cs_initialized(1), before cs In.
+
+2026-08-16 01:48:18,833 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::put_SetProfile] Checking RogAuraDeviceManager initailization state...
+
+2026-08-16 01:48:18,834 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] In.
+2026-08-16 01:48:18,834 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] m_isInitialized ==> 0
+
+2026-08-16 01:48:18,834 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::put_SetProfile] In.
+
+2026-08-16 01:48:18,835 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::PreventSleepState] In.
+2026-08-16 01:48:18,835 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::PreventSleepState] awayMode ==> 0, _flag ==> 0x80000001.
+2026-08-16 01:48:18,835 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::PreventSleepState] Out.
+
+2026-08-16 01:48:18,835 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetProfile] In.
+2026-08-16 01:48:18,836 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetProfile] Func id = 17
+2026-08-16 01:48:18,836 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetProfile] m_isDeviceConfigDirty = 0
+2026-08-16 01:48:18,836 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::AuraRequireToken] token = (1)
+2026-08-16 01:48:18,849 aurals_3.10.10_6180_22972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] In.
+2026-08-16 01:48:18,849 aurals_3.10.10_6180_22972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] Opening profile succeeded.
+2026-08-16 01:48:18,849 aurals_3.10.10_6180_22972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] Out - 2.
+
+2026-08-16 01:48:18,850 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetProfile] mode key = 100, set to 100
+2026-08-16 01:48:18,850 aurals_3.10.10_6180_22972 - [AuraSettingStore][AuraSettingStore::SaveLastProfile] In.
+2026-08-16 01:48:18,852 aurals_3.10.10_6180_22972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] In.
+2026-08-16 01:48:18,862 aurals_3.10.10_6180_22972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] Opening profile succeeded.
+2026-08-16 01:48:18,863 aurals_3.10.10_6180_22972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] Out - 2.
+
+2026-08-16 01:48:18,863 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetProfile] Out.
+
+2026-08-16 01:48:18,863 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::put_SetProfile] _setProfileResult (phase I) = 1
+2026-08-16 01:48:18,863 aurals_3.10.10_6180_22972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] In.
+2026-08-16 01:48:18,863 aurals_3.10.10_6180_22972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] Opening profile succeeded.
+2026-08-16 01:48:18,863 aurals_3.10.10_6180_22972 - [AuraSettingStore][AuraSettingStore::LoadLastProfile] Out - 2.
+
+2026-08-16 01:48:18,864 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::put_SetProfile] _result = 00000000
+2026-08-16 01:48:18,864 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::RestoreSleepState] In.
+2026-08-16 01:48:18,864 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::RestoreSleepState] Out.
+
+2026-08-16 01:48:18,864 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::ResetKillRequestState] In.
+2026-08-16 01:48:18,864 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::ResetKillRequestState] m_killRequest ==> 0
+2026-08-16 01:48:18,864 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::put_SetProfile] Out.
+
+2026-08-16 01:48:18,865 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] In.
+2026-08-16 01:48:18,865 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] m_isInitialized ==> 1
+
+2026-08-16 01:48:18,865 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::ServiceFunctionWrapper] Out. (for put_SetProfile)
+
+2026-08-16 01:48:18,869 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::ServiceFunctionWrapper] In. (for put_SetScript)
+
+2026-08-16 01:48:18,869 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::put_SetScript] cs_initialized(1), before cs In.
+
+2026-08-16 01:48:18,869 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::put_SetScript] Checking RogAuraDeviceManager initailization state...
+
+2026-08-16 01:48:18,870 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] In.
+2026-08-16 01:48:18,870 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] m_isInitialized ==> 0
+
+2026-08-16 01:48:18,871 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::put_SetScript] In.
+
+2026-08-16 01:48:18,871 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetScript] In.
+2026-08-16 01:48:18,871 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] In.
+2026-08-16 01:48:18,871 aurals_3.10.10_6180_22972 - [DeviceSyncExecuter][DeviceSyncExecuter::Stop] finish wait thread stop sync1.
+
+2026-08-16 01:48:18,872 aurals_3.10.10_6180_22972 - [AuEngine] Stopping...
+
+2026-08-16 01:48:18,872 aurals_3.10.10_6180_22972 - [Watchdog] Stop()
+
+2026-08-16 01:48:18,873 aurals_3.10.10_6180_7228 - [Watchdog] ThreadFunc finish
+
+2026-08-16 01:48:18,874 aurals_3.10.10_6180_22972 - [Watchdog] Stopped
+
+2026-08-16 01:48:18,874 aurals_3.10.10_6180_22972 - [AuEngine] m_hThread != NULL
+
+2026-08-16 01:48:18,875 aurals_3.10.10_6180_17276 - [AuEngine] AuEngineThread finish
+
+2026-08-16 01:48:18,875 aurals_3.10.10_6180_22972 - [AuEngine] Lock acquire for clearStack
+2026-08-16 01:48:18,876 aurals_3.10.10_6180_22972 - [AuEngine] Stopped
+
+2026-08-16 01:48:18,876 aurals_3.10.10_6180_22972 - [AuEngine] Stopping...
+
+2026-08-16 01:48:18,876 aurals_3.10.10_6180_22972 - [Watchdog] Stop()
+
+2026-08-16 01:48:18,877 aurals_3.10.10_6180_22972 - [Watchdog] Stopped
+
+2026-08-16 01:48:18,877 aurals_3.10.10_6180_22972 - [AuEngine] Lock acquire for clearStack
+2026-08-16 01:48:18,877 aurals_3.10.10_6180_22972 - [AuEngine] Stopped
+
+2026-08-16 01:48:18,877 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] m_sync->Stop() - done.
+2026-08-16 01:48:18,877 aurals_3.10.10_6180_22972 - [MusicEffectExecuter][MusicEffectExecuter::SetToDefaultECState_Stop] In.
+
+2026-08-16 01:48:18,877 aurals_3.10.10_6180_22972 - [AudioReceiver][AudioReceiver::SetToDefaultECState_Stop] start wait thread stop audio receiver.
+2026-08-16 01:48:18,877 aurals_3.10.10_6180_22972 - [AudioReceiver][AudioReceiver::SetToDefaultECState_Stop] finish wait thread stop audio receiver.
+
+2026-08-16 01:48:18,878 aurals_3.10.10_6180_22972 - [AudioEffect][AudioEffect::SetToDefaultECState_Stop] finish wait thread stop music2.
+
+2026-08-16 01:48:18,878 aurals_3.10.10_6180_22972 - [MusicEffectExecuter][MusicEffectExecuter::SetToDefaultECState_Stop] Out.
+
+2026-08-16 01:48:18,878 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] m_music->SetToDefaultECState_Stop() - done.
+2026-08-16 01:48:18,878 aurals_3.10.10_6180_22972 - [ThermalEffectExecuter][ThermalEffectExecuter::Stop] finish wait thread stop thermal.
+
+2026-08-16 01:48:18,878 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] m_thermal->Stop() - done.
+2026-08-16 01:48:18,878 aurals_3.10.10_6180_22972 - [TempEffectExecuter][TemporaryEffectExecuter::Stop] finish wait thread stop temp.
+
+2026-08-16 01:48:18,879 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] m_temp->Stop() - done.
+2026-08-16 01:48:18,879 aurals_3.10.10_6180_22972 - [HueEffectExecuter][HueEffectExecuter::Stop] In.
+2026-08-16 01:48:18,879 aurals_3.10.10_6180_22972 - [HueEffectExecuter][HueEffectExecuter::Stop] Out.
+
+2026-08-16 01:48:18,879 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] m_hue->Stop() - done.
+2026-08-16 01:48:18,880 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::AllExecuterStop] Out.
+
+2026-08-16 01:48:18,880 aurals_3.10.10_6180_22972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartLuaEngine] In LuaEngine.
+2026-08-16 01:48:18,880 aurals_3.10.10_6180_22972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] StartAuraEngine in
+2026-08-16 01:48:18,881 aurals_3.10.10_6180_22972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] =========== EnemerateAacDevice ============
+2026-08-16 01:48:18,881 aurals_3.10.10_6180_22972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] push below device into engine :
+2026-08-16 01:48:18,881 aurals_3.10.10_6180_22972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] WDL_NB_KB_4ZONE_RGB_LIGHTING
+2026-08-16 01:48:18,881 aurals_3.10.10_6180_22972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] ============ EnemerateAacDevice ============
+2026-08-16 01:48:18,882 aurals_3.10.10_6180_22972 - [ScriptReader] LoadXMLScript
+2026-08-16 01:48:18,882 aurals_3.10.10_6180_22972 - [ScriptReader] get Root Success
+2026-08-16 01:48:18,882 aurals_3.10.10_6180_22972 - [ScriptReader] ParseSignals
+2026-08-16 01:48:18,883 aurals_3.10.10_6180_22972 - [AuEngine] initGlobalSignalProviders Start
+2026-08-16 01:48:18,889 aurals_3.10.10_6180_22972 - [AuSignalProvider] Initial Formula signal provider.
+2026-08-16 01:48:18,890 aurals_3.10.10_6180_22972 - [AuSignalProvider] Initial Keyboard signal provider.
+2026-08-16 01:48:18,890 aurals_3.10.10_6180_22972 - [AuEngine] initGlobalSignalProviders Finish
+2026-08-16 01:48:18,890 aurals_3.10.10_6180_22972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] Create Script Provider
+2026-08-16 01:48:18,890 aurals_3.10.10_6180_22972 - [ScriptEventProvider]initial in
+2026-08-16 01:48:18,891 aurals_3.10.10_6180_22972 - [ScriptEventProvider][check_screenevent] In
+2026-08-16 01:48:18,891 aurals_3.10.10_6180_22972 - [ScriptEventProvider]initViewport in
+2026-08-16 01:48:18,891 aurals_3.10.10_6180_22972 - [ScriptReader] ParseViewportGroup
+2026-08-16 01:48:18,891 aurals_3.10.10_6180_22972 - [ScriptReader] NOT Find WDL_NB_KB_4ZONE_RGB_LIGHTING.csv
+2026-08-16 01:48:18,892 aurals_3.10.10_6180_22972 - [ScriptEventProvider][addDevice2Viewport] In Script type: 0xf7eff
+2026-08-16 01:48:18,892 aurals_3.10.10_6180_22972 - [ScriptEventProvider][addDevice2Viewport] dev->type(): 0xf7eff : script->type(): 0xf7eff
+2026-08-16 01:48:18,892 aurals_3.10.10_6180_22972 - [ScriptEventProvider][addDevice2Viewport] push successed
+
+2026-08-16 01:48:18,892 aurals_3.10.10_6180_22972 - [ScriptEventProvider]initViewport out
+2026-08-16 01:48:18,892 aurals_3.10.10_6180_22972 - [ScriptEventProvider]initProvider in
+2026-08-16 01:48:18,892 aurals_3.10.10_6180_22972 - [ScriptReader] ParseProviderEx
+2026-08-16 01:48:18,893 aurals_3.10.10_6180_22972 - [ScriptEventProvider]initProvider out
+2026-08-16 01:48:18,893 aurals_3.10.10_6180_22972 - [EventProvider] connectSignals() 
+
+2026-08-16 01:48:18,893 aurals_3.10.10_6180_22972 - [ScriptEventProvider]initial out
+2026-08-16 01:48:18,894 aurals_3.10.10_6180_22972 - [AuEngine] Start()
+
+2026-08-16 01:48:18,894 aurals_3.10.10_6180_22972 - [Watchdog] Start()
+
+2026-08-16 01:48:18,894 aurals_3.10.10_6180_22972 - [Watchdog] End()
+
+2026-08-16 01:48:18,896 aurals_3.10.10_6180_22972 - [AuEngine] start to estimate time takeout
+
+2026-08-16 01:48:18,896 aurals_3.10.10_6180_22972 - [AuEngine] out
+
+2026-08-16 01:48:18,898 aurals_3.10.10_6180_22972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartAuraEngine] StartAuraEngine out
+2026-08-16 01:48:18,906 aurals_3.10.10_6180_22972 - [DeviceSyncExecuter][DeviceSyncExecuter::StartLuaEngine] Out LuaEngine.
+2026-08-16 01:48:18,907 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetScript] Out.
+
+2026-08-16 01:48:18,907 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::put_SetScript] Out.
+
+2026-08-16 01:48:18,907 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] In.
+2026-08-16 01:48:18,908 aurals_3.10.10_6180_22972 - [RogAuraDeviceManager][RogAuraDeviceManager::SetInitailizationState] m_isInitialized ==> 1
+
+2026-08-16 01:48:18,908 aurals_3.10.10_6180_22972 - [ServiceMediator][CServiceMediator::ServiceFunctionWrapper] Out. (for put_SetScript)
+
+2026-08-16 01:48:18,909 aurals_3.10.10_6180_25132 - [AuEngine] time_offset = 0.031000
+
+2026-08-16 01:48:18,909 aurals_3.10.10_6180_25132 - [AacDeviceImp][apply] LightCount Success, ModelName = WDL_NB_KB_4ZONE_RGB_LIGHTING
+2026-08-16 01:48:18,909 aurals_3.10.10_6180_25132 - [AacDeviceImp][apply] SetLightColor Success, ModelName = WDL_NB_KB_4ZONE_RGB_LIGHTING
+2026-08-16 01:48:18,909 aurals_3.10.10_6180_25132 - [AacDeviceImp][apply] SetMode Success, ModelName = WDL_NB_KB_4ZONE_RGB_LIGHTING
+2026-08-16 01:48:18,910 aurals_3.10.10_6180_25132 - [AacDeviceImp][apply] Apply Success, ModelName = WDL_NB_KB_4ZONE_RGB_LIGHTING
+2026-08-16 01:48:22,894 aurals_3.10.10_6180_25132 - [AuEngine][stopByAuraSyncStatic] Start
+
+2026-08-16 01:48:29,667 aurals_3.10.10_6180_34612 - [AuAacKeyboard] got Latency device : 0xf7eff, times(9)
+2026-08-16 01:48:29,667 aurals_3.10.10_6180_25132 - [Watchdog] Stop()
+
+2026-08-16 01:48:29,674 aurals_3.10.10_6180_34612 - [AuAacKeyboard] got Latency device : 0xf7eff, times(8)
+2026-08-16 01:48:29,675 aurals_3.10.10_6180_34612 - [Watchdog] ThreadFunc finish
+
+2026-08-16 01:48:29,676 aurals_3.10.10_6180_25132 - [Watchdog] Stopped
+
+2026-08-16 01:48:29,677 aurals_3.10.10_6180_25132 - [AuEngine][stopByAuraSyncStatic] End
+
+2026-08-16 01:48:29,677 aurals_3.10.10_6180_25132 - [AuEngine] AuEngineThread finish
+
+(1824.236c): Break instruction exception - code 80000003 (first chance)
+ntdll!DbgBreakPoint:
+00007ffb`bb220c20 cc              int     3
+0:024> .detach
+Detached
+NoTarget> .detach
+WARNING: The debugger does not have a current process or thread
+WARNING: Many commands will not work
+                ^ Syntax error in '.detach'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\atlmfc.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\concurrency.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\cpp_rest.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\stl.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Data.Json.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Devices.Geolocation.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Devices.Sensors.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\Windows.Media.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\windows.natvis'
+NatVis script unloaded from 'C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\Visualizers\winrt.natvis'

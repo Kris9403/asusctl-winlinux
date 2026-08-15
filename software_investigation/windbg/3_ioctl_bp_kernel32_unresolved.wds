@@ -1,0 +1,3 @@
+.logopen /t C:\Users\Krushna\AppData\Local\Temp\claude\hidtool\windbg_ioctl.log
+bp kernel32!DeviceIoControl "dd @esp+8 L1; db poi(@esp+0xc) L40; g"
+g

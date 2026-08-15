@@ -1,0 +1,49 @@
+Sysinternals Handle v5.0 -- full elevated handle dump for LightingService.exe (PID 6180)
+Command: handle64.exe -accepteula -p 6180 -nobanner
+Captured: 2026-08-16, during the "one last dig" software-architecture investigation
+(see software_investigation/README.md and live_capture/TIMELINE.md for context)
+
+Purpose: after WinDbg breakpoints (HidD_SetFeature, KERNELBASE!DeviceIoControl)
+and a full-system Process Monitor capture both showed zero evidence of
+LightingService.exe performing the raw HID write, this was a direct check
+of every handle the process holds, to rule out a device handle existing
+that simply wasn't caught mid-call.
+
+Result: complete handle list, NO device handle, NO \Device\ path, no HID
+reference anywhere. Fourth independent method confirming the same
+conclusion.
+
+--- Full output ---
+
+4C: File  (RW-)   C:\Windows
+50: File  (RW-)   C:\Windows\SysWOW64
+284: File  (R-D)   C:\Windows\System32\en-US\crypt32.dll.mui
+478: File  (RW-)   C:\Windows\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.26100.7344_none_b6a29bb75241284f
+484: File  (RWD)   C:\Windows\System32\config\systemprofile\AppData\Roaming\Microsoft\SystemCertificates\My
+498: File  (R-D)   C:\Windows\System32\en-US\KernelBase.dll.mui
+4FC: File  (RWD)   C:\ProgramData\ASUS\ARMOURY CRATE Diagnosis\LightingService\LightingService.log
+584: Section       \BaseNamedObjects\__ComCatalogCache__
+5E0: File  (R-D)   C:\Program Files (x86)\ASUS\AURA lighting effect add-on\log4net.dll
+5F0: File  (R-D)   C:\Windows\SysWOW64\stdole2.tlb
+604: File  (R-D)   C:\Windows\System32\en-US\MMDevAPI.dll.mui
+640: Section       \BaseNamedObjects\__ComCatalogCache__
+688: File  (R-D)   C:\Program Files (x86)\ASUS\AURA lighting effect add-on\Bass.Net.dll
+690: File  (R-D)   C:\Program Files\ASUS\AuraSDK\AuraSdk_x86.dll
+708: Section       \BaseNamedObjects\windows_shell_global_counters
+768: File  (RW-)   C:\ProgramData\ASUS\ARMOURY CRATE Diagnosis\AacNBDTSetup\NBDTHAL_2026_08_16_x86_Admin.log
+818: Section       \BaseNamedObjects\Cor_Private_IPCBlock_v4_6180
+81C: Section       \...\Cor_SxSPublic_IPCBlock
+864: File  (R-D)   C:\Program Files (x86)\LightingService\LightingService.exe
+8CC: File  (R-D)   C:\Program Files\ASUS\Aac_NBDT\ThermalHelper.dll
+8E0: File  (R--)   C:\Windows\assembly\pubpol48.dat
+91C: File  (RW-)   C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.26100.7070_none_cf98939a8eac417a
+98C: Section       \BaseNamedObjects\AURASDK
+A00: File  (RWD)   C:\Program Files (x86)\LightingService
+ADC: File  (R-D)   C:\Program Files (x86)\ASUS\AURA lighting effect add-on\AuraLayerManager.dll
+
+--- Notable entry ---
+
+98C: Section \BaseNamedObjects\AURASDK -- a named shared-memory section,
+likely the IPC channel for ASUS's public Aura SDK (used by third-party
+peripheral vendors to sync with the Aura ecosystem). Not the hardware
+path itself -- no device object anywhere in this list.

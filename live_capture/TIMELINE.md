@@ -1313,6 +1313,131 @@ of that boundary, however, is already fully captured and decoded
 earlier in this document, so the byte-level protocol itself is not
 missing -- only the DLL-internal code path that produces it.
 
+## Live-debugging investigation into that black box (2026-08-16, ~01:33-02:05 IST)
+
+User asked to keep digging into exactly where the black box above
+actually happens, "hook or crook." Full artifacts (scripts, WinDbg logs,
+Procmon extract, handle dump) are committed in
+[software_investigation/](../software_investigation/) alongside this
+entry. Four independent methods were used, escalating in depth; all four
+converge on the same conclusion.
+
+### Tooling installed this session
+
+- **WinDbg** (`winget install Microsoft.WinDbg`) -- the MSIX/Store
+  package turned out to be unusable for scripting: files under
+  `C:\Program Files\WindowsApps\` are ACL-locked against direct
+  execution/access outside the package's own sandbox, even for an
+  Administrator. Replaced with the classic **Debugging Tools for
+  Windows** component (`winget install
+  Microsoft.WindowsSDK.10.0.18362 --override "/features
+  OptionId.WindowsDesktopDebuggers /quiet /norestart"`), which installs
+  `cdb.exe` to a normal, scriptable path
+  (`C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\`).
+- **Sysinternals Process Monitor** (`winget install
+  Microsoft.Sysinternals.ProcessMonitor`) and **Sysinternals Handle**
+  (`winget install Microsoft.Sysinternals.Handle`).
+- Attaching `cdb.exe` to `LightingService.exe` (a Session 0 Windows
+  service) requires an **elevated** terminal -- confirmed both for
+  debugger attach and for `handle64.exe` enumeration; non-elevated
+  attempts fail with "Access is denied" / silently return nothing,
+  respectively.
+
+### Attempt 1: `hid!HidD_SetFeature` breakpoint, 64-bit assumption -- caused a real incident
+
+First breakpoint script assumed `LightingService.exe` was a 64-bit
+process (`@rdx`/`@r8` register-based x64 calling convention). It's
+actually **32-bit (WOW64)**. The malformed breakpoint action likely
+caused the debugger-attach itself to destabilise the process: an actual
+`Access violation - code c0000005` fired inside `clr!SafeRelease`
+during a `LM_Support.exe` (screen-capture layer) launch, and the
+keyboard visibly froze on a stuck rainbow effect. Recovered cleanly via
+`.detach` in the debugger console -- lighting resumed normally
+afterward, no lasting damage. Full transcript:
+[windbg/1_windbg_hidfeature_x64_crashed.log](../software_investigation/windbg/1_windbg_hidfeature_x64_crashed.log).
+**Lesson logged for future sessions: always confirm target process
+bitness (`0:0xx> ` prompt shows `x86` vs no suffix) before writing a
+register-based breakpoint action, and treat any live debugger attach to
+a running service as carrying real destabilisation risk regardless of
+script correctness.**
+
+### Attempt 2: corrected x86 breakpoint on `hid!HidD_SetFeature` -- ran clean, zero hits
+
+Corrected script reads the buffer pointer off the stack
+(`poi(@esp+8)`, correct for x86 stdcall). Set successfully, ran through
+~12 real lighting-mode changes with no crash and no freeze. **Zero
+breakpoint hits.** Confirms `LightingService.exe` never calls
+`HidD_SetFeature` directly, in either architecture.
+[windbg/2_hidfeature_bp_x86_corrected.wds](../software_investigation/windbg/2_hidfeature_bp_x86_corrected.wds)
+/
+[windbg/2_windbg_hidfeature_x86_zerohits.log](../software_investigation/windbg/2_windbg_hidfeature_x86_zerohits.log).
+
+### Attempt 3: `kernel32!DeviceIoControl` -- failed to resolve
+
+`kernel32.dll`'s `DeviceIoControl` export is a pure forwarder stub to
+`KERNELBASE.dll` on modern Windows -- no real code to breakpoint. cdb
+reported "Couldn't resolve error" and silently skipped straight to
+`g`, meaning an entire ~12-mode-change run happened completely
+unmonitored (still useful: confirmed continued stability, and captured
+more live `ACPIWMI`/`GetCPUTemperature` polling in real time).
+[windbg/3_ioctl_bp_kernel32_unresolved.wds](../software_investigation/windbg/3_ioctl_bp_kernel32_unresolved.wds)
+/
+[windbg/3_windbg_ioctl_kernel32_unresolved.log](../software_investigation/windbg/3_windbg_ioctl_kernel32_unresolved.log).
+
+### Attempt 4: `KERNELBASE!DeviceIoControl` -- resolved correctly, zero hits
+
+Retargeted at the real implementation. Set successfully (no resolve
+error this time), ran through ~15 more real mode changes. **Zero
+hits.** Combined with Attempt 2, this rules out both of the only two
+ways any Windows process can talk to a device driver --
+`HidD_SetFeature` and raw `DeviceIoControl` -- from inside
+`LightingService.exe`.
+[windbg/4_ioctl_bp_kernelbase.wds](../software_investigation/windbg/4_ioctl_bp_kernelbase.wds)
+/
+[windbg/4_windbg_ioctl_kernelbase_zerohits.log](../software_investigation/windbg/4_windbg_ioctl_kernelbase_zerohits.log).
+
+### Method 5: full-system Process Monitor capture -- zero HID DeviceIoControl, any process
+
+Unfiltered system-wide capture (~49s, spans the actual mode-change
+event, verified against `LightingService.log` timestamps). Zero
+`DeviceIoControl` operations to any HID device path, from **any**
+process on the system -- not just `LightingService.exe`. All of
+`LightingService.exe`'s own 2459 I/O operations in the window are its
+own log file, `AuraProcess.ini`, and NTFS journal metadata; no device
+I/O at all. Full methodology and findings:
+[procmon/README.md](../software_investigation/procmon/README.md).
+Filtered extract (raw 422MB/175MB captures excluded, too large for
+git):
+[procmon/lightingservice_all_io.csv](../software_investigation/procmon/lightingservice_all_io.csv).
+
+### Method 6: elevated handle enumeration -- zero device handles held
+
+Complete dump of every handle `LightingService.exe` holds (Sysinternals
+`handle64.exe`, elevated). No `\Device\` path, no HID reference
+anywhere -- just its log file, loaded DLLs, and a couple of IPC/shared-
+memory sections (including one literally named `AURASDK`, likely the
+public Aura SDK's IPC channel for third-party peripheral vendors -- not
+the hardware path itself). Full output:
+[handle_lightingservice_pid6180.txt](../software_investigation/handle_lightingservice_pid6180.txt).
+
+### Final conclusion
+
+**Four independent methods, all in agreement: `LightingService.exe`
+never touches the hardware directly, at any level Windows exposes to
+conventional tracing.** It calls into the WinRT
+`Windows.Devices.Lights.LampArray` API (confirmed earlier via
+`AacAmbientLighting.log`'s `MyLampArray_AvailabilityChanged` hook), and
+the actual `IOCTL_HID_SET_FEATURE` call happens inside a Windows system
+broker component that WinRT device APIs proxy through -- a process this
+investigation did not identify, and which would require targeting an
+unknown system service (meaningfully higher risk than anything
+attempted here, since such processes often host multiple unrelated OS
+services) to trace further. Not pursued past this point -- the
+byte-level wire protocol was already fully known before this
+investigation began, so this thread was purely about *how Windows'
+own internal plumbing* delivers those bytes, not about the ASUS
+protocol itself.
+
 **Final file sizes (v2 run)**: `usbpcap1_35min_v2.pcapng` 288 B (empty,
 header only -- consistent with prior runs), `usbpcap2_35min_v2.pcapng`
 288 B (empty), `usbpcap3_35min_v2.pcapng` **249,980 B** -- real captured

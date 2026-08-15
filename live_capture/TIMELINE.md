@@ -934,6 +934,195 @@ not something that surfaces through WMI method calls during any of the
 scenarios tested here -- the `0x5D` USB HID handshake sequence remains
 the strongest concrete lead for the Linux implementation.
 
+## Full remaining-avenues sweep (2026-08-16, ~01:00-01:10 IST)
+
+User asked to exhaust every remaining Windows-side angle (Windows 10 ISO
+test excluded, deferred). Four checks run:
+
+### 1. Registry-cached device state -- ruled out
+
+Checked `HKLM\SYSTEM\CurrentControlSet\Enum\HID` for every instance
+under `VID_0B05&PID_19B6` (9 collections under `MI_00`, `Col01`-`Col09`,
+plus a separate `MI_01`). Only two of eleven instances have a
+`Device Parameters` key at all, and both contain only generic Windows
+HID-class-driver bookkeeping (`Col07`: mouse scroll-wheel flags
+`FlipFlopWheel`/`HScrollPageOverride`/etc.; `Col09`: keyboard-class
+`Protocol`/`NumberOfInputReports`/`SupportResumeOnConnect`). No
+ASUS-specific cached capability blob, no persisted first-contact state.
+This theory is closed.
+
+### 2. HID collection map via HidD_GetPreparsedData / HidP_GetCaps -- major new structural data
+
+Wrote a small C# tool (`SetupDiGetClassDevs` + `HidD_GetPreparsedData` +
+`HidP_GetCaps` via P/Invoke, compiled with `csc.exe`) to enumerate every
+HID collection for this VID/PID and read back UsagePage/Usage/report
+lengths. `IOCTL_HID_GET_REPORT_DESCRIPTOR` (the raw descriptor bytes)
+failed on every collection with `ERROR_INVALID_FUNCTION` -- likely
+blocked at this privilege level on modern Windows -- but `HidP_GetCaps`
+succeeded and is enough to map the whole device:
+
+| Collection | UsagePage | Usage | In/Out/Feature (bytes) | Identity |
+|---|---|---|---|---|
+| MI_00 Col01 | 0xFF89 | 0x0010 | 0/0/17 | unknown vendor collection |
+| MI_00 Col02 | -- | -- | -- | access denied (locked keyboard input collection) |
+| MI_00 Col03 | 0xFF31 | 0x0076 | 6/0/64 | **exact match for the `0x5D` handshake (64B)** |
+| MI_00 Col04 | 0xFF31 | 0x0079 | 32/64/64 | same vendor page family as Col03, larger |
+| MI_00 Col05 | 0x000C | 0x0001 | 3/0/0 | standard Consumer Control (media keys) |
+| MI_00 Col06 | 0x0001 | 0x000C | 2/2/0 | Generic Desktop, non-standard usage |
+| MI_00 Col07 | -- | -- | -- | access denied (locked, likely real keyboard input) |
+| MI_00 Col08 | 0x0001 | 0x0080 | 2/0/0 | standard System Control (power/sleep) |
+| MI_00 Col09 | 0xFF82 | 0x00CF | 17/61/61 | **unknown vendor collection, larger than anything observed on the wire (61B > Report 0x04's 51B) -- likely an undiscovered report ID, not yet triggered** |
+| MI_01 | 0x0059 | 0x0001 | 0/0/51 | **exact match for Report 0x04 (zone RGB, 51B)** |
+
+Confirms Report `0x04` lives alone on the separate `MI_01` interface,
+and the `0x5D` handshake lives on `MI_00 Col03`/`Col04` (vendor page
+`0xFF31`). **Col09 (vendor page 0xFF82, up to 61 bytes) is a genuinely
+new, unexplored lead** -- something larger than Report 0x04 exists on
+this device that hasn't been triggered/observed in any capture so far.
+
+### 3. Full Configuration Descriptor structure -- decoded from existing capture
+
+Re-decoded via `tshark -V` from already-captured data (no new hardware
+access needed). Device address 3.1 is a **2-interface composite USB
+HID device**:
+- **Interface 0**: HID, Boot Protocol = Keyboard, Report Descriptor
+  **419 bytes** (houses the 9 `MI_00` collections above), endpoint
+  0x81 IN, interrupt, 64B max, 4ms interval.
+- **Interface 1**: HID, Boot Protocol = Mouse, Report Descriptor
+  **327 bytes** (houses `MI_01`'s Report-0x04 vendor collection
+  alongside a standard boot-mouse collection), endpoint 0x82 IN,
+  interrupt, 64B max, 2ms interval.
+
+Total combined Report Descriptor content across both interfaces:
+746 bytes, self-powered, remote-wakeup capable, 100mA.
+
+### 4. Direct SFUN/DSTS WMI probe -- confirms ACPI/WMI bypass for lighting
+
+Required elevation (`AsusAtkWmi_WMNB` instances are SYSTEM/Admin-only
+readable). Called directly against instance `ACPI\PNP0C14\ATK_0`:
+- **`SFUN`** (supported-functions bitmap) returned **33** (`0x21`,
+  binary `100001`) -- confirms the interface is genuinely live and
+  responds meaningfully, not just erroring out.
+- **`DSTS`** with `Device_ID = 0x00050021` (standard keyboard-backlight,
+  well-known constant from Linux's open-source `asus-wmi` driver)
+  returned **`device_status = 4294967294` (0xFFFFFFFE)** -- ASUS's
+  standard "device ID not supported" error code.
+- **`DSTS`** with `Device_ID = 0x00050025` (per-key/RGB keyboard
+  variant) returned the **identical** `0xFFFFFFFE` unsupported code.
+
+Both legacy ACPI-WMI keyboard-backlight device IDs are unimplemented on
+this hardware's firmware. **Conclusion, now confirmed from a third
+independent angle** (boot trace, live-action trace, and now direct
+protocol probing): this model's firmware never wired up ACPI-WMI for
+keyboard lighting at all -- RGB control was moved entirely to the USB
+HID channel. The ACPI/WMI investigation is exhausted for this hardware;
+there is nothing further to find there for lighting purposes.
+
+### Genuinely open items after this sweep
+
+1. **MI_00 Col09** (vendor page `0xFF82`, up to 61 bytes) -- unexplored,
+   worth a targeted capture to see if anything ever writes to it.
+   **RESOLVED below** -- see installed-files sweep.
+2. **Windows 10 ISO test** -- explicitly deferred by user, not done.
+3. Raw HID Report Descriptor bytes (not just the parsed capability
+   summary) -- blocked by `IOCTL_HID_GET_REPORT_DESCRIPTOR` access
+   restriction at user level; would need a kernel-mode approach or a
+   different extraction method to get byte-for-byte AML/HID descriptor
+   content.
+
+## Installed ASUS files sweep -- the single most valuable find of the session (2026-08-16 01:14:49 IST)
+
+User's idea: check the actual installed Armoury Crate/Aura files and
+logs on disk for anything useful, before committing. Extremely
+productive.
+
+### `Col09` mystery resolved
+
+`ARMOURY CRATE Diagnosis\AacAmbientHal\AacAmbientHal.log` shows Col09
+(`hid#vid_0b05&pid_19b6&mi_00&col09`) being **opened and immediately
+closed** repeatedly via `HIDHelper::GetAllHidInfo` -- a generic
+"enumerate every HID collection's basic info" pass (just
+`HidD_GetAttributes`/`HidP_GetCaps`-equivalent queries), not a
+functional data exchange. Matches exactly why no `SET_REPORT`/
+`GET_REPORT` traffic to it ever showed up in any USB capture --
+confirmed genuinely unused for lighting, not missed.
+
+### `LastProfile.xml` (`C:\Program Files (x86)\LightingService\LastProfile.xml`)
+
+Confirms the device's internal Aura Sync type name: **
+`WDL_NB_KB_4ZONE_RGB_LIGHTING`** -- "4ZONE" directly in ASUS's own
+naming, corroborating the keyboard-zone count found from packet
+analysis. Device ID recorded as `0B0519B6` (this VID:PID). Reveals
+Aura Sync represents colour internally as **HSL** (hue/saturation/
+lightness), converting to RGB only for the wire protocol -- explains
+some of the less-obviously-RGB byte patterns seen in the breathing/
+strobing captures earlier (they're HSL-ramp conversions, not raw
+arbitrary values). Also reveals **thermal-reactive lighting**
+thresholds (40C / 60C, tied to `thermal_value_type=Thermal`) and a
+**music-reactive mode** (`music_index=1`) exist as effect capabilities
+in the software, beyond what was captured this session. Confirms
+`exclusivemode=1` was active (Armoury Crate held exclusive control) at
+last save, consistent with ending the session on "priority back to
+Armoury Crate."
+
+### `AacAmbientLighting.log` -- confirms Windows LampArray API usage
+
+`ARMOURY CRATE Diagnosis\AacAmbientHal\AacAmbientLighting.log` shows
+Aura Sync's ambient-lighting HAL hooking **`MyLampArray_AvailabilityChanged`**
+-- i.e. it consumes the device through Windows' own
+`Windows.Devices.Lights.LampArray` WinRT/HID LampArray API, on
+`VID_0B05&PID_19B6&MI_01` (the same interface Report 0x04 lives on).
+Also logs the device's LampArray geometry: **`aac h: 5`, `aac w: 8`,
+`sorted: 40`** -- an 8-wide x 5-tall logical grid, 40 total addressable
+positions.
+
+### `0B0519B6.csv` -- the authoritative lamp/zone geometry map (the big one)
+
+Found at `C:\ProgramData\ASUS\ROG Live Service\DeviceContent\0B0519B6\
+0B0519B6.csv` -- ASUS's own official per-device lamp layout profile,
+keyed by this exact VID:PID (`0B0519B6`). **Copied into this repo**:
+[device_profile/0B0519B6_lamp_layout.csv](../device_profile/0B0519B6_lamp_layout.csv).
+
+Header: `GridWidth=13, GridHeight=10, PhyWidth=35.4, PhyHeight=26.4`
+(physical size, likely cm). Body: 40 rows (`LED 0`-`LED 39`, matching
+the LampArray's 8x5=40 grid exactly), each with `grid_x, grid_y,
+exist, phy_x, phy_y, phy_z, lamp_id`. Only 16 of the 40 grid cells have
+`exist=1` (a real physical LED) -- **and those 16 populated cells have
+`lamp_id` values 0 through 15**, an **exact match for the 16 zone IDs
+(0-15) already reverse-engineered from Report 0x04 traffic this
+session**. This is independent, authoritative confirmation of
+everything found from raw packets, plus real physical layout data no
+packet capture could ever provide:
+
+| lamp_id | grid (x,y) | phy (x,y,z) mm | Inferred location |
+|---|---|---|---|
+| 0 | (2,2) | 6.5, 9.9, 0.9 | keyboard |
+| 1 | (3,2) | 14.0, 9.9, 0.9 | keyboard |
+| 2 | (4,2) | 21.4, 9.9, 0.9 | keyboard |
+| 3 | (5,2) | 28.9, 9.9, 0.9 | keyboard |
+| 4 | (6,0) | 35.4, 0, 2 | chassis, top row |
+| 5 | (1,0) | 0.6, 0, 2 | chassis, top row |
+| 6 | (0,0) | 0, 0, 2 | chassis, top row |
+| 7 | (7,0) | 36, 0, 2 | chassis, top row |
+| 8 | (7,1) | 36, 0.6, 2 | chassis, 2nd row |
+| 9 | (0,1) | 0, 0.6, 2 | chassis, 2nd row |
+| 10 | (7,3) | 36, 25.9, 2 | chassis, 4th row |
+| 11 | (0,3) | 0, 25.9, 2 | chassis, 4th row |
+| 12 | (7,4) | 36, 26.5, 2 | chassis, bottom row |
+| 13 | (0,4) | 0, 26.5, 2 | chassis, bottom row |
+| 14 | (6,4) | 35.4, 26.5, 2 | chassis, bottom row |
+| 15 | (1,4) | 0.6, 26.5, 2 | chassis, bottom row |
+
+Confirms cleanly: **lamp_id 0-3 (grid row y=2, the physical middle of
+the layout) = the 4 keyboard zones**; **lamp_id 4-15 (grid rows y=0,1,3,4,
+forming the perimeter) = the 12 chassis lightbar zones**, exactly
+matching the earlier zone-0-3-is-keyboard / zone-4-plus-is-chassis
+finding from the red/blue isolation test, now with an authoritative
+source and real spatial layout (roughly: top edge = 4,5,6,7; upper
+sides = 8,9; lower sides = 10,11; bottom edge = 12,13,14,15). This is
+directly usable as a reference zone map for the Linux implementation --
+no more guessing needed for which zone ID is physically where.
+
 **Final file sizes (v2 run)**: `usbpcap1_35min_v2.pcapng` 288 B (empty,
 header only -- consistent with prior runs), `usbpcap2_35min_v2.pcapng`
 288 B (empty), `usbpcap3_35min_v2.pcapng` **249,980 B** -- real captured

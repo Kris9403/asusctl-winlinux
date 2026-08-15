@@ -1179,6 +1179,59 @@ every `Add mode X` value): **`STATIC`, `BREATH`, `RAINBOW`,
 already tested this session (static/breathing/rainbow/strobing);
 `COLORCYCLE` was never explicitly triggered/captured.
 
+## Second pass: full software architecture + ACPI-WMI refinement (2026-08-16 01:21:02 IST)
+
+User asked to keep digging into the rest of the 5.9MB service log.
+Enumerated all 104 distinct `[Module][Function]` log tags to find what
+else was worth pulling. Two more genuinely important findings.
+
+### ACPI-WMI DSTS *is* used by this software -- but only for a CPU-temperature sensor, not lighting
+
+Searched the whole log for every named `DSTS X(0xHEXCODE)` call. Only
+**three** appear anywhere in either day's log:
+
+| Named call | Device ID | Result |
+|---|---|---|
+| `GetCPUTemperature` | `0x00120094` | **Succeeds repeatedly**, values `0x0001004A` through `0x00010061` (low byte = 74-97, i.e. degrees C -- climbing over the session, consistent with real CPU load from installs/captures running) |
+| `PadModeStatus` | `0x00060077` | Fails, `LastResult=0x00000000` -- 2-in-1/tablet-mode detection, irrelevant to this clamshell |
+| `PowerStatusIndicator` | `0x000600C2` | Fails, `LastResult=0x00000000` -- also unsupported on this hardware |
+
+This **refines, not contradicts**, the earlier WMI-Activity conclusion:
+ACPI-WMI DSTS genuinely is called by this software stack, but only to
+read **CPU temperature** as an input signal for the thermal-reactive
+lighting effect already found in `LastProfile.xml`
+(`thermal_threshold_one=40`, `thermal_threshold_two=60`). It is never
+used to read or write anything about the keyboard/lightbar itself --
+that stays entirely on USB HID as already established. This also
+explains the boot-time WMI trace finding earlier in this file (11 DSTS
+calls, callers identified but device IDs unknown at the time, since
+WMI-Activity doesn't log parameter values) -- those calls were almost
+certainly this same `GetCPUTemperature` polling, not anything
+lighting-related.
+
+### Full software pipeline from profile to wire, and what "EC mode" actually means here
+
+Traced the call chain from effect-apply down to the HID write:
+**`AuraApply` -> `SendXmlToLightingService`** (serializes the current
+profile as XML -- the same format seen in `LastProfile.xml` -- over an
+inter-process socket) **-> `SendScriptToLightingService`** (a locking
+step, "FunctionKey Lock"/"Unlock" around the send) **-> `LightingService.exe`**
+(a separate process; this is where the actual Report 0x04/0x05 USB HID
+writes happen, per everything captured earlier in this file --
+`LightingService.exe` itself doesn't write to this particular log file,
+so its internal HID-write logging wasn't directly inspected this pass).
+
+**`SetECMode`** (`[AuraDlg][SetECMode] Set Zone EC mode = 3`) appears 31
+times across both logs' entirety, and is **always exactly `3`**, always
+paired with `"Local device is unsync, set last EC mode = 3"` and
+`"Debug Mode = 3, R=0, G=0, B=0"`. This is not a dynamic per-effect mode
+selector -- it is a **constant representing the "device unsynced /
+lights off" idle state**, distinct from the `STATIC`/`BREATH`/
+`RAINBOW`/`STROBING`/`COLORCYCLE` run-mode vocabulary found earlier
+(which is what actually drives the Report 0x04/0x05 wire protocol).
+Does not change the standing conclusion that lighting control itself is
+100% USB HID.
+
 **Final file sizes (v2 run)**: `usbpcap1_35min_v2.pcapng` 288 B (empty,
 header only -- consistent with prior runs), `usbpcap2_35min_v2.pcapng`
 288 B (empty), `usbpcap3_35min_v2.pcapng` **249,980 B** -- real captured

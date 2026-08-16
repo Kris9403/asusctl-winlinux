@@ -1438,6 +1438,45 @@ investigation began, so this thread was purely about *how Windows'
 own internal plumbing* delivers those bytes, not about the ASUS
 protocol itself.
 
+## Kernel-level ETW trace, requested by the Linux side (2026-08-16 13:54:10 IST)
+
+Pulled `LINUX_INVESTIGATION.md` (Linux collaborator pushed a major
+update: replicated the full `0x5D` handshake live, closed the flag-byte
+and transfer-mechanism questions, and got a real `count=5` lightbar
+write working once -- genuine progress, full detail in that file). Their
+doc explicitly flags this session's four-method Windows finding as
+important supporting evidence, and calls out kernel-level ETW tracing
+of the HID class driver's own provider as "the one technique that could
+plausibly see the actual mechanism directly." Ran it.
+
+Full method, provider selection, and detailed results:
+[software_investigation/etw/README.md](../software_investigation/etw/README.md).
+Short version: traced `Microsoft-Windows-Input-HIDCLASS` (the exact
+provider requested) and `Microsoft-Windows-Devices-AccessBroker` (a
+guess at the unidentified broker's identity) simultaneously, at maximum
+verbosity, through a real mode change. **12 total events in 85 seconds,
+all a one-time session-start device rundown, zero tied to the actual
+write, zero from AccessBroker at all.** Fifth independent method, same
+conclusion as the other four: the write doesn't surface through this
+provider's instrumentation. One incidental find: revealed a previously
+uncatalogued I2C HID device (`ACPI\ASUF1209`, likely the touchpad) via
+the rundown's device inventory -- unrelated to the lighting
+investigation, noted for completeness.
+
+Conclusion relayed back via a note in `LINUX_INVESTIGATION.md`: this
+specific provider doesn't work because it only instruments device
+lifecycle (start/stop/enumerate), not per-request I/O -- so it was
+never going to catch a `SET_REPORT`/`IOCTL_HID_SET_FEATURE` event
+regardless of whether the write passes through `hidclass.sys` normally.
+`AccessBroker` producing nothing at all suggests either genuine
+inactivity or (more likely) it's simply the wrong provider name --
+the real `LampArray` broker's ETW identity is still unknown. Next step
+if anyone continues this: a broad unfiltered kernel trace (full
+`xperf`/WPR profile capturing every provider) rather than guessing
+individual provider names one at a time, since two name-guesses have
+now failed (`AccessBroker` here, plus the `kernel32!DeviceIoControl`
+forwarder-resolution miss earlier).
+
 **Final file sizes (v2 run)**: `usbpcap1_35min_v2.pcapng` 288 B (empty,
 header only -- consistent with prior runs), `usbpcap2_35min_v2.pcapng`
 288 B (empty), `usbpcap3_35min_v2.pcapng` **249,980 B** -- real captured

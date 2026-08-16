@@ -1,0 +1,691 @@
+Files Processed:
+	C:\Users\Krushna\AppData\Local\Temp\claude\hidtool\wpr_broad_trace.etl
+Total Buffers Processed 933
+Total Events  Processed 6930337
+Total Events  Lost      0
+Start Time              16 August 2026
+End Time                16 August 2026
+Elapsed Time            44 sec
++-------------------------------------------------------------------------------------------------------------------------+
+|Event Count   Event Name           Task            Opcode          Version         Guid                                  |
++-------------------------------------------------------------------------------------------------------------------------+
+|          1   EventTrace           0               ProviderBinaryPath 2               {68fdd900-4a3e-11d1-84f4-0000f80464e3}|
+|          3   EventTrace           0               RDComplete      2               {68fdd900-4a3e-11d1-84f4-0000f80464e3}|
+|          3   EventTrace           0               EndExtension    2               {68fdd900-4a3e-11d1-84f4-0000f80464e3}|
+|          4   EventTrace           0               Extension       2               {68fdd900-4a3e-11d1-84f4-0000f80464e3}|
+|          5   EventTrace           0               PartitionInfoExtension 2               {68fdd900-4a3e-11d1-84f4-0000f80464e3}|
+|          1   EventTrace           0               Header          2               {68fdd900-4a3e-11d1-84f4-0000f80464e3}|
+|          1                        0               37              0               {9b79ee91-b5fd-41c0-a243-4248e266e9d0}|
+|          1                        0               32              0               {9b79ee91-b5fd-41c0-a243-4248e266e9d0}|
+|         50                        0               36              0               {9b79ee91-b5fd-41c0-a243-4248e266e9d0}|
+|         12                        0               35              0               {9b79ee91-b5fd-41c0-a243-4248e266e9d0}|
+|          3                        0               34              0               {9b79ee91-b5fd-41c0-a243-4248e266e9d0}|
+|          1                        0               33              0               {9b79ee91-b5fd-41c0-a243-4248e266e9d0}|
+|          1   PerfInfo             0               CollectionEnd   3               {ce1dbfb4-137e-4da6-87b0-3f59aa102cbc}|
+|          4   PerfInfo             0               Mark            0               {ce1dbfb4-137e-4da6-87b0-3f59aa102cbc}|
+|       2329   PerfInfo             0               95              2               {ce1dbfb4-137e-4da6-87b0-3f59aa102cbc}|
+|       3708   PerfInfo             0               97              2               {ce1dbfb4-137e-4da6-87b0-3f59aa102cbc}|
+|          1   PerfInfo             0               CollectionStart 3               {ce1dbfb4-137e-4da6-87b0-3f59aa102cbc}|
+|      14537   PerfInfo             0               98              2               {ce1dbfb4-137e-4da6-87b0-3f59aa102cbc}|
+|       1927   PerfInfo             0               69              2               {ce1dbfb4-137e-4da6-87b0-3f59aa102cbc}|
+|       5020   PerfInfo             0               67              2               {ce1dbfb4-137e-4da6-87b0-3f59aa102cbc}|
+|       8142   PerfInfo             0               96              2               {ce1dbfb4-137e-4da6-87b0-3f59aa102cbc}|
+|     113089   PerfInfo             0               46              2               {ce1dbfb4-137e-4da6-87b0-3f59aa102cbc}|
+|      72700   PerfInfo             0               68              2               {ce1dbfb4-137e-4da6-87b0-3f59aa102cbc}|
+|      24310   PerfInfo             0               50              2               {ce1dbfb4-137e-4da6-87b0-3f59aa102cbc}|
+|    2961009   StackWalk            0               Stack           2               {def2fe46-7bd6-4b80-bd94-f57fe20d0ce3}|
+|       6438   Thread               0               DCEnd           3               {3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c}|
+|        208   Thread               0               SetIoPriority   3               {3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c}|
+|        915   Thread               0               SetPagePriority 3               {3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c}|
+|        540   Thread               0               End             3               {3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c}|
+|         87   Thread               0               SetName         2               {3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c}|
+|        783   Thread               0               Start           3               {3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c}|
+|        857   Thread               0               71              3               {3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c}|
+|      11167   Thread               0               70              3               {3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c}|
+|       2593   Thread               0               SetBasePriority 3               {3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c}|
+|      19837   Thread               0               SetPriority     3               {3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c}|
+|    1151611   Thread               0               36              5               {3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c}|
+|       6153   Thread               0               DCStart         3               {3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c}|
+|     583257   Thread               0               ReadyThread     2               {3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c}|
+|         53   Process              0               Defunct         5               {3d6fa8d0-fe05-11d0-9dda-00c04fd7ba7c}|
+|        309   Process              0               DCEnd           4               {3d6fa8d0-fe05-11d0-9dda-00c04fd7ba7c}|
+|        309   Process              0               PerfCtrRundown  2               {3d6fa8d0-fe05-11d0-9dda-00c04fd7ba7c}|
+|         24   Process              0               Start           4               {3d6fa8d0-fe05-11d0-9dda-00c04fd7ba7c}|
+|         20   Process              0               End             4               {3d6fa8d0-fe05-11d0-9dda-00c04fd7ba7c}|
+|         20   Process              0               PerfCtr         2               {3d6fa8d0-fe05-11d0-9dda-00c04fd7ba7c}|
+|         20   Process              0               Terminate       2               {3d6fa8d0-fe05-11d0-9dda-00c04fd7ba7c}|
+|        305   Process              0               DCStart         4               {3d6fa8d0-fe05-11d0-9dda-00c04fd7ba7c}|
+|         10                        0               34              2               {b3e675d7-2554-4f18-830b-2762732560de}|
+|         14                        0               39              1               {b3e675d7-2554-4f18-830b-2762732560de}|
+|       1396                        0               37              2               {b3e675d7-2554-4f18-830b-2762732560de}|
+|        256                        0               32              2               {b3e675d7-2554-4f18-830b-2762732560de}|
+|          3                        0               41              1               {b3e675d7-2554-4f18-830b-2762732560de}|
+|      35520                        0               40              1               {b3e675d7-2554-4f18-830b-2762732560de}|
+|      36388                        0               38              2               {b3e675d7-2554-4f18-830b-2762732560de}|
+|      37716                        0               36              2               {b3e675d7-2554-4f18-830b-2762732560de}|
+|      38392                        0               0               2               {b3e675d7-2554-4f18-830b-2762732560de}|
+|       2826                        0               64              0               {b3e675d7-2554-4f18-830b-2762732560de}|
+|      18492   Image                0               DCEnd           3               {2cb15d1d-5fc1-11d2-abe1-00a0c911f518}|
+|          1   Image                0               HypercallPage   2               {2cb15d1d-5fc1-11d2-abe1-00a0c911f518}|
+|          1   Image                0               KernelBase      2               {2cb15d1d-5fc1-11d2-abe1-00a0c911f518}|
+|        707   Image                0               UnLoad          3               {2cb15d1d-5fc1-11d2-abe1-00a0c911f518}|
+|        913   Image                0               Load            3               {2cb15d1d-5fc1-11d2-abe1-00a0c911f518}|
+|      18286   Image                0               DCStart         3               {2cb15d1d-5fc1-11d2-abe1-00a0c911f518}|
+|         72   Object               0               TypeDCEnd       2               {89497f50-effe-4440-8cf2-ce6b1cdcaca7}|
+|     146840   Object               0               HandleDCEnd     2               {89497f50-effe-4440-8cf2-ce6b1cdcaca7}|
+|      28275   Object               0               34              3               {89497f50-effe-4440-8cf2-ce6b1cdcaca7}|
+|     280880   Object               0               CreateHandle    2               {89497f50-effe-4440-8cf2-ce6b1cdcaca7}|
+|     307316   Object               0               CloseHandle     2               {89497f50-effe-4440-8cf2-ce6b1cdcaca7}|
+|      29450   FileIo               0               FileRundown     2               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|          1   FileIo               0               85              3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|         20   FileIo               0               DirNotify       3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|         39   FileIo               0               RenamePath      3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|         39   FileIo               0               Rename          3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|         18   FileIo               0               83              3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|        473   FileIo               0               84              3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|         97   FileIo               0               DletePath       3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|         97   FileIo               0               Delete          3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|        107   FileIo               0               Flush           3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|       2341   FileIo               0               DirEnum         3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|        303   FileIo               0               86              3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|        553   FileIo               0               SetInfo         3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|       2739   FileIo               0               FSControl       3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|       4068   FileIo               0               Write           3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|        345   FileIo               0               FileDelete      2               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|        656   FileIo               0               FileCreate      2               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|      15215   FileIo               0               Close           3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|      15187   FileIo               0               Cleanup         3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|      30640   FileIo               0               QueryInfo       3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|      18083   FileIo               0               Create          3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|     100695   FileIo               0               OperationEnd    3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|      10810   FileIo               0               Read            3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|        148   DiskIo               0               FlushBuffers    3               {3d6fa8d4-fe05-11d0-9dda-00c04fd7ba7c}|
+|         68   DiskIo               0               FlushInit       3               {3d6fa8d4-fe05-11d0-9dda-00c04fd7ba7c}|
+|       2239   DiskIo               0               Write           3               {3d6fa8d4-fe05-11d0-9dda-00c04fd7ba7c}|
+|       1195   DiskIo               0               WriteInit       3               {3d6fa8d4-fe05-11d0-9dda-00c04fd7ba7c}|
+|       3465   DiskIo               0               Read            3               {3d6fa8d4-fe05-11d0-9dda-00c04fd7ba7c}|
+|       2188   DiskIo               0               ReadInit        3               {3d6fa8d4-fe05-11d0-9dda-00c04fd7ba7c}|
+|        624   Power                0               51              2               {e43445e0-0903-48c3-b878-ff0fccebdd04}|
+|          6   Power                0               38              2               {e43445e0-0903-48c3-b878-ff0fccebdd04}|
+|        948   Power                0               53              2               {e43445e0-0903-48c3-b878-ff0fccebdd04}|
+|          1   PageFault            0               124             2               {3d6fa8d3-fe05-11d0-9dda-00c04fd7ba7c}|
+|        172   PageFault            0               125             4               {3d6fa8d3-fe05-11d0-9dda-00c04fd7ba7c}|
+|         86   PageFault            0               112             3               {3d6fa8d3-fe05-11d0-9dda-00c04fd7ba7c}|
+|       3222   PageFault            0               HardFault       2               {3d6fa8d3-fe05-11d0-9dda-00c04fd7ba7c}|
+|         40                        0               33              0               {bbccf6c1-6cd1-48c4-80ff-839482e37671}|
+|        252                        0               32              0               {bbccf6c1-6cd1-48c4-80ff-839482e37671}|
+|          4   Microsoft-Antimalware-Engine 10              MetaStoreMaintenance 0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          1   Microsoft-Antimalware-Engine 6               BmFileSequentialRead 0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          1   Microsoft-Antimalware-Engine 1               Stop            3               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          1   Microsoft-Antimalware-Engine 18              Stop            3               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          1   Microsoft-Antimalware-Engine 18              Start           2               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          1   Microsoft-Antimalware-Engine 1               Start           2               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         84   Microsoft-Antimalware-Engine 6               BmProcessContextStop 0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          5   Microsoft-Antimalware-Engine 6               BmScavengerTask 0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          2   Microsoft-Antimalware-Engine 6               BmFolderRename  0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         12   Microsoft-Antimalware-Engine 7               CacheLookup     0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         23   Microsoft-Antimalware-Engine 9               ExpensiveOperationEnd 1               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         23   Microsoft-Antimalware-Engine 9               ExpensiveOperationBegin 1               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         21   Microsoft-Antimalware-Engine 6               BmProcessContextStart 0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         23   Microsoft-Antimalware-Engine 6               BmProcessCreate 0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          4   Microsoft-Antimalware-Engine 6               BmFileOverwrite 0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          9   Microsoft-Antimalware-Engine 6               BmFolderCreate  0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         85   Microsoft-Antimalware-Engine 6               BmRegistry      0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|        624   Microsoft-Antimalware-Engine 6               BmOpenProcess   0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|       3870   Microsoft-Antimalware-Engine 6               BmEtw           0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         37   Microsoft-Antimalware-Engine 6               BmFileRename    0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         88   Microsoft-Antimalware-Engine 6               BmFileDelete    0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|       1074   Microsoft-Antimalware-Engine 10              MetaStoreAction 0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|        297   Microsoft-Antimalware-Engine 2               Info            0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|        110   Microsoft-Antimalware-Engine 6               BmFileCreateEx  0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|        164   Microsoft-Antimalware-Engine 6               BmFileChangeEx  0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         61   Microsoft-Antimalware-Engine 6               BmInternal      0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|        258   Microsoft-Antimalware-Engine 4               Stop            1               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|        110   Microsoft-Antimalware-Engine 5               Info            0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|        258   Microsoft-Antimalware-Engine 4               Start           1               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         41   Microsoft-Antimalware-Engine 6               ProcessMonitorFlags 2               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         19   Microsoft-Antimalware-Engine 6               BmProcessTerminate 0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|        303   Microsoft-Antimalware-Engine 7               MOACLookup      0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|       6319   Microsoft-Antimalware-Engine 6               BmNotificationHandleStop 0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|       6319   Microsoft-Antimalware-Engine 6               BmNotificationHandleStart 0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|        680   Microsoft-Antimalware-Engine 6               BmModuleLoad    0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          1   Microsoft-Antimalware-Engine 3               Info            0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          1   Microsoft-Windows-Kernel-Power  253             Info            0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|         56   Microsoft-Windows-Kernel-Power  226             Info            0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          1   Microsoft-Windows-Kernel-Power  217             Info            0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          1   Microsoft-Windows-Kernel-Power  160             Info            0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          5   Microsoft-Windows-Kernel-Power  206             Info            0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          1   Microsoft-Windows-Kernel-Power  205             Info            0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          1   Microsoft-Windows-Kernel-Power  150             Info            0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|        250   Microsoft-Windows-Kernel-Power  151             Info            0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          3   Microsoft-Windows-Kernel-Power  99              Info            0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          1   Microsoft-Windows-Kernel-Power  101             Info            0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|         14   Microsoft-Windows-Kernel-Power  96              Info            1               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          1   Microsoft-Windows-Kernel-Power  153             Info            0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          4   Microsoft-Windows-Kernel-Power  94              Info            1               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|         29   Microsoft-Windows-Kernel-Power  104             Info            0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          1   Microsoft-Windows-Kernel-Power  93              Info            1               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          1   Microsoft-Windows-Kernel-Power  89              Info            1               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          6   Microsoft-Windows-Kernel-Power  90              Info            1               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|         36   Microsoft-Windows-Kernel-Power  177             Stop            0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|         36   Microsoft-Windows-Kernel-Power  177             Start           0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|       4488   Microsoft-Windows-Kernel-Power  216             Info            0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|       4488   Microsoft-Windows-Kernel-Power  215             Info            0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          2   Microsoft-Windows-Kernel-Power  240             Info            1               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          2   Microsoft-Windows-Kernel-Power  251             Info            0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          8   Microsoft-Windows-Kernel-Power  252             Info            0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|      46158   Microsoft-Windows-Kernel-Power  69              Info            2               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|     192334   Microsoft-Windows-Kernel-Power  259             Info            0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          3   Microsoft-Antimalware-Service  11              Info            0               {751ef305-6c6e-4fed-b847-02ef79d26aef}|
+|          1   Microsoft-Antimalware-Service  1               Stop            0               {751ef305-6c6e-4fed-b847-02ef79d26aef}|
+|          1   Microsoft-Antimalware-Service  1               Start           0               {751ef305-6c6e-4fed-b847-02ef79d26aef}|
+|        146   Microsoft-Antimalware-Service  14              Info            0               {751ef305-6c6e-4fed-b847-02ef79d26aef}|
+|        309   Microsoft-Antimalware-Service  13              Info            0               {751ef305-6c6e-4fed-b847-02ef79d26aef}|
+|          1   Microsoft-Antimalware-Service  21              Info            1               {751ef305-6c6e-4fed-b847-02ef79d26aef}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  175             Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  17              Info            2               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  48              Info            2               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        240   Microsoft-Windows-Kernel-Processor-Power  93              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          2   Microsoft-Windows-Kernel-Processor-Power  94              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          4   Microsoft-Windows-Kernel-Processor-Power  70              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  51              Info            2               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  77              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  61              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        296   Microsoft-Windows-Kernel-Processor-Power  84              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         14   Microsoft-Windows-Kernel-Processor-Power  81              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  85              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  188             Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  45              Info            3               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  173             Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  172             Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  158             Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  156             Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         56   Microsoft-Windows-Kernel-Processor-Power  169             Info            1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  197             Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  98              Info            1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  104             Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  68              Info            4               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  36              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  179             Info            1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        168   Microsoft-Windows-Kernel-Processor-Power  155             Info            1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  126             Info            1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  44              Info            9               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        219   Microsoft-Windows-Kernel-Processor-Power  148             Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         28   Microsoft-Windows-Kernel-Processor-Power  147             Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  49              Info            2               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  57              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  41              Info            1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  31              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  30              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  29              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  47              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  4               Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  18              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  174             Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          2   Microsoft-Windows-Kernel-Processor-Power  59              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  50              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  20              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          2   Microsoft-Windows-Kernel-Processor-Power  37              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  11              FailedStart     0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         20   Microsoft-Windows-Kernel-Processor-Power  196             Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|       1120   Microsoft-Windows-Kernel-Processor-Power  170             Info            1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         20   Microsoft-Windows-Kernel-Processor-Power  97              Info            1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        480   Microsoft-Windows-Kernel-Processor-Power  96              Info            1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         20   Microsoft-Windows-Kernel-Processor-Power  157             Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         20   Microsoft-Windows-Kernel-Processor-Power  108             Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        504   Microsoft-Windows-Kernel-Processor-Power  13              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        504   Microsoft-Windows-Kernel-Processor-Power  10              Info            5               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        504   Microsoft-Windows-Kernel-Processor-Power  178             Info            1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        504   Microsoft-Windows-Kernel-Processor-Power  9               Info            3               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|       5712   Microsoft-Windows-Kernel-Processor-Power  154             Info            1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         34   Microsoft-Windows-Kernel-Processor-Power  83              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        137   Microsoft-Windows-Kernel-Processor-Power  165             Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        309   Microsoft-Windows-Kernel-Processor-Power  14              Info            1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|       1181   Microsoft-Windows-Kernel-Processor-Power  149             Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|       1460   Microsoft-Windows-Kernel-Processor-Power  11              Stop            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        307   Microsoft-Windows-Kernel-Processor-Power  15              Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|      24768   Microsoft-Windows-Kernel-Processor-Power  160             Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|       1424   Microsoft-Windows-Kernel-Processor-Power  168             Info            0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|       1424   Microsoft-Windows-Kernel-Processor-Power  162             Info            1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|       1424   Microsoft-Windows-Kernel-Processor-Power  161             Info            1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|       1424   Microsoft-Windows-Kernel-Processor-Power  38              Info            2               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|      34176   Microsoft-Windows-Kernel-Processor-Power  12              Info            4               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|      22805   Microsoft-Windows-Kernel-Processor-Power  89              Info            2               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|       1460   Microsoft-Windows-Kernel-Processor-Power  11              Start           0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          4   Microsoft-Antimalware-AMFilter  6               Info            0               {cfeb0608-330e-4410-b00d-56d8da9986e6}|
+|        285   Microsoft-Antimalware-AMFilter  10              Info            0               {cfeb0608-330e-4410-b00d-56d8da9986e6}|
+|        298   Microsoft-Antimalware-AMFilter  11              Info            0               {cfeb0608-330e-4410-b00d-56d8da9986e6}|
+|        298   Microsoft-Antimalware-AMFilter  9               Info            0               {cfeb0608-330e-4410-b00d-56d8da9986e6}|
+|         64   Microsoft-Antimalware-AMFilter  7               Info            0               {cfeb0608-330e-4410-b00d-56d8da9986e6}|
+|         65   Microsoft-Antimalware-AMFilter  8               Info            0               {cfeb0608-330e-4410-b00d-56d8da9986e6}|
+|       1058   Microsoft-Antimalware-AMFilter  3               Info            0               {cfeb0608-330e-4410-b00d-56d8da9986e6}|
+|        256   Microsoft-Antimalware-RTP  23              Info            0               {8e92deef-5e17-413b-b927-59b2f06a3cfc}|
+|       2408   Microsoft-Antimalware-RTP  20              Info            0               {8e92deef-5e17-413b-b927-59b2f06a3cfc}|
+|         63   Microsoft-Windows-RPC  4               Start           1               {6ad52b32-d609-4be9-ae07-ce8dae937e39}|
+|         41   Microsoft-Windows-RPC  4               Stop            1               {6ad52b32-d609-4be9-ae07-ce8dae937e39}|
+|      12887   Microsoft-Windows-RPC  1               Stop            1               {6ad52b32-d609-4be9-ae07-ce8dae937e39}|
+|      12332   Microsoft-Windows-RPC  2               Stop            1               {6ad52b32-d609-4be9-ae07-ce8dae937e39}|
+|      12332   Microsoft-Windows-RPC  2               Start           1               {6ad52b32-d609-4be9-ae07-ce8dae937e39}|
+|      12394   Microsoft-Windows-RPC  1               Start           1               {6ad52b32-d609-4be9-ae07-ce8dae937e39}|
+|          1   Microsoft-Windows-Performance-Recorder-Control  120             Stop            0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          1   Microsoft-Windows-Performance-Recorder-Control  120             Start           0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          1   Microsoft-Windows-Performance-Recorder-Control  119             Stop            0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          1   Microsoft-Windows-Performance-Recorder-Control  119             Start           0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          1   Microsoft-Windows-Performance-Recorder-Control  114             Start           0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          3   Microsoft-Windows-Performance-Recorder-Control  115             Stop            0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          4   Microsoft-Windows-Performance-Recorder-Control  103             Stop            0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          4   Microsoft-Windows-Performance-Recorder-Control  103             Start           0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          4   Microsoft-Windows-Performance-Recorder-Control  108             Stop            0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          4   Microsoft-Windows-Performance-Recorder-Control  108             Start           0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|         29   Microsoft-Windows-Performance-Recorder-Control  102             Stop            0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|         29   Microsoft-Windows-Performance-Recorder-Control  102             Start           0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          3   Microsoft-Windows-Performance-Recorder-Control  115             Start           0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          1   Microsoft-Windows-Performance-Recorder-Control  110             Stop            0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|      14938   Microsoft-Windows-DotNETRuntime 9               UnloadVerbose   2               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|         52   Microsoft-Windows-DotNETRuntime 10              AppDomainUnload  1               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|       1674   Microsoft-Windows-DotNETRuntime 10              AssemblyUnload  1               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|       1674   Microsoft-Windows-DotNETRuntime 10              ModuleUnload    2               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|          2   Microsoft-Windows-DotNETRuntime 9               MethodILToNativeMap  0               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|       1046   Microsoft-Windows-DotNETRuntime 9               LoadVerbose     2               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|      69998   Microsoft-Windows-DotNETRuntime 9               UnloadVerbose   1               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|       1055   Microsoft-Windows-DotNETRuntime 9               87              1               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|         13   Microsoft-Windows-DotNETRuntime 9               LoadVerbose     1               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|       1055   Microsoft-Windows-DotNETRuntime 9               103             0               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|       1059   Microsoft-Windows-DotNETRuntime 9               JittingStarted  1               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|       1186   Microsoft-Windows-Win32k 36              Info            0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|         14   Microsoft-Windows-Win32k 76              Stop            0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|         18   Microsoft-Windows-Win32k 76              Start           0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|          1   Microsoft-Windows-Win32k 35              Info            0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|          2   Microsoft-Windows-Win32k 37              Info            0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|         71   Microsoft-Windows-Win32k 77              Stop            0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|         71   Microsoft-Windows-Win32k 45              Info            0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|         99   Microsoft-Windows-Win32k 77              Start           0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|          7   Microsoft-Windows-Win32k 208             Start           0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|         29   Microsoft-Windows-Win32k 2               Info            0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|         22   Microsoft-Windows-Win32k 26              Info            0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|         41   Microsoft-Windows-Win32k 21              Info            0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|          3   Microsoft-Windows-Search-Core  11              Info            0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|          1   Microsoft-Windows-Search-Core  112             Info            0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|          1   Microsoft-Windows-Search-Core  50              Info            0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|          5   Microsoft-Windows-Search-Core  230             Info            0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|          5   Microsoft-Windows-Search-Core  227             Info            0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|          5   Microsoft-Windows-Search-Core  228             Info            0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|          5   Microsoft-Windows-Search-Core  229             Info            0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|        570   Microsoft-Windows-Search-Core  236             Stop            0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|        570   Microsoft-Windows-Search-Core  236             Start           0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|        354   Microsoft-Windows-Search-Core  284             Stop            0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|        354   Microsoft-Windows-Search-Core  284             Start           0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|        404   Microsoft-Windows-Search-Core  10              Info            0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|        490   Microsoft-Windows-Search-Core  258             Info            0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|        404   Microsoft-Windows-Search-Core  209             Info            0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|        183                        0               0               0               {43ac453b-97cd-4b51-4376-db7c9bb963ac}|
+|          1   Microsoft-Windows-Rpc-EndpointMapper  0               0               1               {d8975f88-7ddb-4ed0-91bf-3adf48c48e0c}|
+|         10   Microsoft-Windows-BackgroundTaskInfrastructure  100             TaskUnbuffered  0               {e6835967-e0d2-41fb-bcec-58387404e25a}|
+|          2   Microsoft-Windows-BackgroundTaskInfrastructure  100             TaskUnregistered 0               {e6835967-e0d2-41fb-bcec-58387404e25a}|
+|          2   Microsoft-Windows-BackgroundTaskInfrastructure  102             Stop            0               {e6835967-e0d2-41fb-bcec-58387404e25a}|
+|          2   Microsoft-Windows-BackgroundTaskInfrastructure  102             Start           0               {e6835967-e0d2-41fb-bcec-58387404e25a}|
+|          6   Microsoft-Windows-ProcessStateManager  103             Info            0               {d49918cf-9489-4bf1-9d7b-014d864cf71f}|
+|          2   Microsoft-Windows-ProcessStateManager  105             DCStop          0               {d49918cf-9489-4bf1-9d7b-014d864cf71f}|
+|          8   Microsoft-Windows-ProcessStateManager  100             Info            0               {d49918cf-9489-4bf1-9d7b-014d864cf71f}|
+|          2   Microsoft-Windows-COMRuntime  2               Info            0               {bf406804-6afa-46e7-8a48-6c357e1d6d61}|
+|       7514   Microsoft-JScript    0               1               0               {57277741-3638-4a4b-bdba-0ac6e45da56c}|
+|       3712   Microsoft-JScript    3               MethodDCEnd     0               {57277741-3638-4a4b-bdba-0ac6e45da56c}|
+|          4   Microsoft-JScript    3               DCEndComplete   0               {57277741-3638-4a4b-bdba-0ac6e45da56c}|
+|          4   Microsoft-JScript    4               SourceDCEnd     0               {57277741-3638-4a4b-bdba-0ac6e45da56c}|
+|          2   Microsoft-JScript    4               ScriptContextDCEnd 0               {57277741-3638-4a4b-bdba-0ac6e45da56c}|
+|          4   Microsoft-JScript    3               DCEndInit       0               {57277741-3638-4a4b-bdba-0ac6e45da56c}|
+|      27716   Microsoft-JScript    1               MethodLoad      0               {57277741-3638-4a4b-bdba-0ac6e45da56c}|
+|        287   Microsoft-Windows-Kernel-EventTracing  6               User Mode Stack Trace  0               {b675ec37-bdb6-4648-bc92-f3fdc74d3ca2}|
+|          2   Microsoft-Windows-ReadyBoostDriver  19              Info            1               {2a274310-42d5-4019-b816-e4b8c7abe95c}|
+|          2   Microsoft-Windows-ReadyBoostDriver  7               Info            1               {2a274310-42d5-4019-b816-e4b8c7abe95c}|
+|         32   Microsoft-Windows-DotNETRuntimeRundown 1               DCStopComplete  1               {a669021c-c450-4609-a035-5af59af4df18}|
+|         52   Microsoft-Windows-DotNETRuntimeRundown 2               AppDomainDCStop  1               {a669021c-c450-4609-a035-5af59af4df18}|
+|       1674   Microsoft-Windows-DotNETRuntimeRundown 2               AssemblyDCStop  1               {a669021c-c450-4609-a035-5af59af4df18}|
+|      14938   Microsoft-Windows-DotNETRuntimeRundown 1               DCStopVerbose   2               {a669021c-c450-4609-a035-5af59af4df18}|
+|       1590   Microsoft-Windows-DotNETRuntimeRundown 2               DomainModuleDCStop  1               {a669021c-c450-4609-a035-5af59af4df18}|
+|       1674   Microsoft-Windows-DotNETRuntimeRundown 2               ModuleDCStop    2               {a669021c-c450-4609-a035-5af59af4df18}|
+|      66690   Microsoft-Windows-DotNETRuntimeRundown 1               42              1               {a669021c-c450-4609-a035-5af59af4df18}|
+|      14834   Microsoft-Windows-DotNETRuntimeRundown 1               MethodDCEndILToNativeMap  0               {a669021c-c450-4609-a035-5af59af4df18}|
+|      69984   Microsoft-Windows-DotNETRuntimeRundown 1               DCStopVerbose   1               {a669021c-c450-4609-a035-5af59af4df18}|
+|         32   Microsoft-Windows-DotNETRuntimeRundown 1               DCStopInit      1               {a669021c-c450-4609-a035-5af59af4df18}|
+|         32   Microsoft-Windows-DotNETRuntimeRundown 19              Start           0               {a669021c-c450-4609-a035-5af59af4df18}|
+|          1   Microsoft-Windows-UserModePowerService 45              0               0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 24              0               1               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 23              0               0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          8   Microsoft-Windows-UserModePowerService 14              Info            1               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 13              Info            0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 9               Info            0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 8               Info            0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 7               Info            0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 6               Info            0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 10              0               0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|        100   Microsoft-Windows-UserModePowerService 35              Info            1               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|         16   Microsoft-Windows-UserModePowerService 43              Info            0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 38              Info            0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          2   Microsoft-Windows-UserModePowerService 36              Info            1               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|        246   Microsoft-Windows-UserModePowerService 15              Info            1               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|        178   Microsoft-Windows-UserModePowerService 3               Info            1               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|        178   Microsoft-Windows-UserModePowerService 4               Info            1               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 2               Info            0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 1               Info            0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   SystemConfig         0               NumaNode        2               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|          1   SystemConfig         0               ProcessorGroup  2               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|          1   SystemConfig         0               ProcessorNumber 2               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|          1   SystemConfig         0               Boot Config Info 2               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|          1   SystemConfig         0               Virtualization Config Info 2               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|          1   SystemConfig         0               TelemetryConfiguration 2               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|          1   SystemConfig         0               CodeIntegrity   2               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|          1   SystemConfig         0               FlightIds       2               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|          1   SystemConfig         0               DeviceFamily    2               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|          1   SystemConfig         0               Platform        2               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|          1   SystemConfig         0               Power           2               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|         24   SystemConfig         0               Processors      2               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|          1   SystemConfig         0               CPU             3               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|        307   SystemConfig         0               Services        3               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|         34   SystemConfig         0               IRQ             3               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|        251   SystemConfig         0               PnP             5               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|          4   SystemConfig         0               Defragmentation 2               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|          2   SystemConfig         0               LogDisk         2               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|          2   SystemConfig         0               19              2               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|          2   SystemConfig         0               PhyDisk         2               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|          6   SystemConfig         0               NIC             2               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|          1   SystemConfig         0               DPI             2               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|          8   SystemConfig         0               Video           2               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|          1                        0               37              0               {ed54dff8-c409-4cf6-bf83-05e1e61a09c4}|
+|          1                        0               35              0               {ed54dff8-c409-4cf6-bf83-05e1e61a09c4}|
+|          1                        0               33              0               {ed54dff8-c409-4cf6-bf83-05e1e61a09c4}|
++-------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+|Event Count   Event Name           Event ID        Version         Guid                                  |
++---------------------------------------------------------------------------------------------------------+
+|         17   EventTrace           0               2               {68fdd900-4a3e-11d1-84f4-0000f80464e3}|
+|         68                        0               0               {9b79ee91-b5fd-41c0-a243-4248e266e9d0}|
+|          4   PerfInfo             0               0               {ce1dbfb4-137e-4da6-87b0-3f59aa102cbc}|
+|     245762   PerfInfo             0               2               {ce1dbfb4-137e-4da6-87b0-3f59aa102cbc}|
+|          2   PerfInfo             0               3               {ce1dbfb4-137e-4da6-87b0-3f59aa102cbc}|
+|    2961009   StackWalk            0               2               {def2fe46-7bd6-4b80-bd94-f57fe20d0ce3}|
+|     583344   Thread               0               2               {3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c}|
+|      49491   Thread               0               3               {3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c}|
+|    1151611   Thread               0               5               {3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c}|
+|        349   Process              0               2               {3d6fa8d0-fe05-11d0-9dda-00c04fd7ba7c}|
+|        658   Process              0               4               {3d6fa8d0-fe05-11d0-9dda-00c04fd7ba7c}|
+|         53   Process              0               5               {3d6fa8d0-fe05-11d0-9dda-00c04fd7ba7c}|
+|       2826                        0               0               {b3e675d7-2554-4f18-830b-2762732560de}|
+|      35537                        0               1               {b3e675d7-2554-4f18-830b-2762732560de}|
+|     114158                        0               2               {b3e675d7-2554-4f18-830b-2762732560de}|
+|          2   Image                0               2               {2cb15d1d-5fc1-11d2-abe1-00a0c911f518}|
+|      38398   Image                0               3               {2cb15d1d-5fc1-11d2-abe1-00a0c911f518}|
+|     735108   Object               0               2               {89497f50-effe-4440-8cf2-ce6b1cdcaca7}|
+|      28275   Object               0               3               {89497f50-effe-4440-8cf2-ce6b1cdcaca7}|
+|      30451   FileIo               0               2               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|     201525   FileIo               0               3               {90cbdc39-4a3e-11d1-84f4-0000f80464e3}|
+|       9303   DiskIo               0               3               {3d6fa8d4-fe05-11d0-9dda-00c04fd7ba7c}|
+|       1578   Power                0               2               {e43445e0-0903-48c3-b878-ff0fccebdd04}|
+|       3223   PageFault            0               2               {3d6fa8d3-fe05-11d0-9dda-00c04fd7ba7c}|
+|         86   PageFault            0               3               {3d6fa8d3-fe05-11d0-9dda-00c04fd7ba7c}|
+|        172   PageFault            0               4               {3d6fa8d3-fe05-11d0-9dda-00c04fd7ba7c}|
+|        292                        0               0               {bbccf6c1-6cd1-48c4-80ff-839482e37671}|
+|          1   Microsoft-Antimalware-Engine 1               2               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          1   Microsoft-Antimalware-Engine 2               3               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         34   Microsoft-Antimalware-Engine 3               0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          1   Microsoft-Antimalware-Engine 4               0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|        258   Microsoft-Antimalware-Engine 5               1               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|        258   Microsoft-Antimalware-Engine 6               1               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|        110   Microsoft-Antimalware-Engine 7               0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|        680   Microsoft-Antimalware-Engine 11              0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         88   Microsoft-Antimalware-Engine 15              0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         37   Microsoft-Antimalware-Engine 16              0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         19   Microsoft-Antimalware-Engine 26              0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          1   Microsoft-Antimalware-Engine 32              2               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          1   Microsoft-Antimalware-Engine 33              3               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|        303   Microsoft-Antimalware-Engine 36              0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         12   Microsoft-Antimalware-Engine 38              0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         23   Microsoft-Antimalware-Engine 43              1               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|       1074   Microsoft-Antimalware-Engine 44              0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          4   Microsoft-Antimalware-Engine 45              0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|        624   Microsoft-Antimalware-Engine 53              0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|        263   Microsoft-Antimalware-Engine 59              0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|       3870   Microsoft-Antimalware-Engine 60              0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          9   Microsoft-Antimalware-Engine 61              0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          5   Microsoft-Antimalware-Engine 62              0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          2   Microsoft-Antimalware-Engine 64              0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         23   Microsoft-Antimalware-Engine 67              1               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         23   Microsoft-Antimalware-Engine 70              0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|        110   Microsoft-Antimalware-Engine 71              0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|        164   Microsoft-Antimalware-Engine 72              0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         41   Microsoft-Antimalware-Engine 73              2               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          4   Microsoft-Antimalware-Engine 95              0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|          1   Microsoft-Antimalware-Engine 103             0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         61   Microsoft-Antimalware-Engine 104             0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         85   Microsoft-Antimalware-Engine 105             0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         21   Microsoft-Antimalware-Engine 109             0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|         84   Microsoft-Antimalware-Engine 110             0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|       6319   Microsoft-Antimalware-Engine 111             0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|       6319   Microsoft-Antimalware-Engine 112             0               {0a002690-3839-4e3a-b3b6-96d8df868d99}|
+|      46158   Microsoft-Windows-Kernel-Power  63              2               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          1   Microsoft-Windows-Kernel-Power  92              1               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          6   Microsoft-Windows-Kernel-Power  93              1               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          1   Microsoft-Windows-Kernel-Power  96              1               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          4   Microsoft-Windows-Kernel-Power  97              1               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|         14   Microsoft-Windows-Kernel-Power  99              1               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          3   Microsoft-Windows-Kernel-Power  104             0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          1   Microsoft-Windows-Kernel-Power  106             0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|         29   Microsoft-Windows-Kernel-Power  110             0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          1   Microsoft-Windows-Kernel-Power  132             0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|        250   Microsoft-Windows-Kernel-Power  136             0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|         36   Microsoft-Windows-Kernel-Power  146             0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|         36   Microsoft-Windows-Kernel-Power  147             0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          1   Microsoft-Windows-Kernel-Power  175             0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          5   Microsoft-Windows-Kernel-Power  176             0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|       4488   Microsoft-Windows-Kernel-Power  181             0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|       4488   Microsoft-Windows-Kernel-Power  182             0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          1   Microsoft-Windows-Kernel-Power  183             0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          1   Microsoft-Windows-Kernel-Power  505             0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          1   Microsoft-Windows-Kernel-Power  509             0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|         56   Microsoft-Windows-Kernel-Power  527             0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          2   Microsoft-Windows-Kernel-Power  541             1               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          2   Microsoft-Windows-Kernel-Power  549             0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          8   Microsoft-Windows-Kernel-Power  550             0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          1   Microsoft-Windows-Kernel-Power  551             0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|     192334   Microsoft-Windows-Kernel-Power  557             0               {331c3b3a-2005-44c2-ac5e-77220c37d6b4}|
+|          1   Microsoft-Antimalware-Service  1               0               {751ef305-6c6e-4fed-b847-02ef79d26aef}|
+|          1   Microsoft-Antimalware-Service  2               0               {751ef305-6c6e-4fed-b847-02ef79d26aef}|
+|          3   Microsoft-Antimalware-Service  18              0               {751ef305-6c6e-4fed-b847-02ef79d26aef}|
+|        309   Microsoft-Antimalware-Service  20              0               {751ef305-6c6e-4fed-b847-02ef79d26aef}|
+|        146   Microsoft-Antimalware-Service  21              0               {751ef305-6c6e-4fed-b847-02ef79d26aef}|
+|          1   Microsoft-Antimalware-Service  28              1               {751ef305-6c6e-4fed-b847-02ef79d26aef}|
+|        504   Microsoft-Windows-Kernel-Processor-Power  9               3               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        504   Microsoft-Windows-Kernel-Processor-Power  10              5               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|      34176   Microsoft-Windows-Kernel-Processor-Power  12              4               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        504   Microsoft-Windows-Kernel-Processor-Power  13              0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        309   Microsoft-Windows-Kernel-Processor-Power  14              1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        307   Microsoft-Windows-Kernel-Processor-Power  15              0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|       1460   Microsoft-Windows-Kernel-Processor-Power  16              0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  19              2               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  20              0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  22              0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  23              0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  43              0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  44              0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  45              0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  51              0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          2   Microsoft-Windows-Kernel-Processor-Power  52              0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|       1424   Microsoft-Windows-Kernel-Processor-Power  53              2               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  56              0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  60              1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  64              9               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  65              3               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  67              2               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  68              2               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  70              0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  71              0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  72              2               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  78              0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          2   Microsoft-Windows-Kernel-Processor-Power  80              0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  82              0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  89              4               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          4   Microsoft-Windows-Kernel-Processor-Power  91              0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  98              0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|       1460   Microsoft-Windows-Kernel-Processor-Power  100             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         14   Microsoft-Windows-Kernel-Processor-Power  103             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         34   Microsoft-Windows-Kernel-Processor-Power  105             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        296   Microsoft-Windows-Kernel-Processor-Power  106             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  107             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|      22805   Microsoft-Windows-Kernel-Processor-Power  111             2               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        240   Microsoft-Windows-Kernel-Processor-Power  115             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          2   Microsoft-Windows-Kernel-Processor-Power  116             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        480   Microsoft-Windows-Kernel-Processor-Power  118             1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         20   Microsoft-Windows-Kernel-Processor-Power  119             1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  120             1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  126             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         20   Microsoft-Windows-Kernel-Processor-Power  130             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  149             1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         28   Microsoft-Windows-Kernel-Processor-Power  171             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        219   Microsoft-Windows-Kernel-Processor-Power  172             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|       1181   Microsoft-Windows-Kernel-Processor-Power  173             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  180             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         20   Microsoft-Windows-Kernel-Processor-Power  181             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  182             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|      24768   Microsoft-Windows-Kernel-Processor-Power  184             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|       1424   Microsoft-Windows-Kernel-Processor-Power  185             1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|       1424   Microsoft-Windows-Kernel-Processor-Power  186             1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        137   Microsoft-Windows-Kernel-Processor-Power  189             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|       1424   Microsoft-Windows-Kernel-Processor-Power  192             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         56   Microsoft-Windows-Kernel-Processor-Power  193             1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|       1120   Microsoft-Windows-Kernel-Processor-Power  194             1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  196             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  197             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  198             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  199             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        504   Microsoft-Windows-Kernel-Processor-Power  202             1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         24   Microsoft-Windows-Kernel-Processor-Power  203             1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|       5712   Microsoft-Windows-Kernel-Processor-Power  211             1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|        168   Microsoft-Windows-Kernel-Processor-Power  212             1               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  214             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|         20   Microsoft-Windows-Kernel-Processor-Power  223             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|          1   Microsoft-Windows-Kernel-Processor-Power  224             0               {0f67e49f-fe51-4e9f-b490-6f2948cc6027}|
+|       1058   Microsoft-Antimalware-AMFilter  3               0               {cfeb0608-330e-4410-b00d-56d8da9986e6}|
+|          4   Microsoft-Antimalware-AMFilter  6               0               {cfeb0608-330e-4410-b00d-56d8da9986e6}|
+|         64   Microsoft-Antimalware-AMFilter  7               0               {cfeb0608-330e-4410-b00d-56d8da9986e6}|
+|         65   Microsoft-Antimalware-AMFilter  8               0               {cfeb0608-330e-4410-b00d-56d8da9986e6}|
+|        298   Microsoft-Antimalware-AMFilter  9               0               {cfeb0608-330e-4410-b00d-56d8da9986e6}|
+|        285   Microsoft-Antimalware-AMFilter  10              0               {cfeb0608-330e-4410-b00d-56d8da9986e6}|
+|        298   Microsoft-Antimalware-AMFilter  11              0               {cfeb0608-330e-4410-b00d-56d8da9986e6}|
+|       2408   Microsoft-Antimalware-RTP  22              0               {8e92deef-5e17-413b-b927-59b2f06a3cfc}|
+|        256   Microsoft-Antimalware-RTP  27              0               {8e92deef-5e17-413b-b927-59b2f06a3cfc}|
+|        528   Microsoft-Windows-RPC  1               1               {6ad52b32-d609-4be9-ae07-ce8dae937e39}|
+|      12394   Microsoft-Windows-RPC  5               1               {6ad52b32-d609-4be9-ae07-ce8dae937e39}|
+|      12332   Microsoft-Windows-RPC  6               1               {6ad52b32-d609-4be9-ae07-ce8dae937e39}|
+|      12359   Microsoft-Windows-RPC  7               1               {6ad52b32-d609-4be9-ae07-ce8dae937e39}|
+|      12332   Microsoft-Windows-RPC  8               1               {6ad52b32-d609-4be9-ae07-ce8dae937e39}|
+|         57   Microsoft-Windows-RPC  14              1               {6ad52b32-d609-4be9-ae07-ce8dae937e39}|
+|         41   Microsoft-Windows-RPC  15              1               {6ad52b32-d609-4be9-ae07-ce8dae937e39}|
+|          6   Microsoft-Windows-RPC  16              1               {6ad52b32-d609-4be9-ae07-ce8dae937e39}|
+|         29   Microsoft-Windows-Performance-Recorder-Control  104             0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|         29   Microsoft-Windows-Performance-Recorder-Control  105             0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          4   Microsoft-Windows-Performance-Recorder-Control  106             0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          4   Microsoft-Windows-Performance-Recorder-Control  109             0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          4   Microsoft-Windows-Performance-Recorder-Control  114             0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          4   Microsoft-Windows-Performance-Recorder-Control  115             0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          1   Microsoft-Windows-Performance-Recorder-Control  121             0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          1   Microsoft-Windows-Performance-Recorder-Control  128             0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          3   Microsoft-Windows-Performance-Recorder-Control  130             0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          3   Microsoft-Windows-Performance-Recorder-Control  131             0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          1   Microsoft-Windows-Performance-Recorder-Control  138             0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          1   Microsoft-Windows-Performance-Recorder-Control  139             0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          1   Microsoft-Windows-Performance-Recorder-Control  140             0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|          1   Microsoft-Windows-Performance-Recorder-Control  141             0               {36b6f488-aad7-48c2-afe3-d4ec2c8b46fa}|
+|         13   Microsoft-Windows-DotNETRuntime 143             1               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|       1046   Microsoft-Windows-DotNETRuntime 143             2               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|      69998   Microsoft-Windows-DotNETRuntime 144             1               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|      14938   Microsoft-Windows-DotNETRuntime 144             2               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|       1059   Microsoft-Windows-DotNETRuntime 145             1               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|       1055   Microsoft-Windows-DotNETRuntime 146             0               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|       1674   Microsoft-Windows-DotNETRuntime 153             2               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|       1674   Microsoft-Windows-DotNETRuntime 155             1               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|         52   Microsoft-Windows-DotNETRuntime 157             1               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|          2   Microsoft-Windows-DotNETRuntime 190             0               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|       1055   Microsoft-Windows-DotNETRuntime 190             1               {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}|
+|         29   Microsoft-Windows-Win32k 2               0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|         41   Microsoft-Windows-Win32k 20              0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|         22   Microsoft-Windows-Win32k 26              0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|          1   Microsoft-Windows-Win32k 35              0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|       1186   Microsoft-Windows-Win32k 36              0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|          2   Microsoft-Windows-Win32k 37              0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|         71   Microsoft-Windows-Win32k 45              0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|         18   Microsoft-Windows-Win32k 84              0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|         14   Microsoft-Windows-Win32k 85              0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|         99   Microsoft-Windows-Win32k 86              0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|         71   Microsoft-Windows-Win32k 87              0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|          7   Microsoft-Windows-Win32k 205             0               {8c416c79-d49b-4f01-a467-e56d3aa8234c}|
+|        404   Microsoft-Windows-Search-Core  19              0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|          3   Microsoft-Windows-Search-Core  21              0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|          1   Microsoft-Windows-Search-Core  77              0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|          1   Microsoft-Windows-Search-Core  169             0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|        404   Microsoft-Windows-Search-Core  259             0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|          5   Microsoft-Windows-Search-Core  283             0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|          5   Microsoft-Windows-Search-Core  284             0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|          5   Microsoft-Windows-Search-Core  285             0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|          5   Microsoft-Windows-Search-Core  286             0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|        570   Microsoft-Windows-Search-Core  297             0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|        570   Microsoft-Windows-Search-Core  298             0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|        490   Microsoft-Windows-Search-Core  322             0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|        354   Microsoft-Windows-Search-Core  363             0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|        354   Microsoft-Windows-Search-Core  364             0               {49c2c27c-fe2d-40bf-8c4e-c3fb518037e7}|
+|        183                        0               0               {43ac453b-97cd-4b51-4376-db7c9bb963ac}|
+|          1   Microsoft-Windows-Rpc-EndpointMapper  3               1               {d8975f88-7ddb-4ed0-91bf-3adf48c48e0c}|
+|          2   Microsoft-Windows-BackgroundTaskInfrastructure  7               0               {e6835967-e0d2-41fb-bcec-58387404e25a}|
+|          2   Microsoft-Windows-BackgroundTaskInfrastructure  8               0               {e6835967-e0d2-41fb-bcec-58387404e25a}|
+|         10   Microsoft-Windows-BackgroundTaskInfrastructure  18              0               {e6835967-e0d2-41fb-bcec-58387404e25a}|
+|          2   Microsoft-Windows-BackgroundTaskInfrastructure  20              0               {e6835967-e0d2-41fb-bcec-58387404e25a}|
+|          8   Microsoft-Windows-ProcessStateManager  1               0               {d49918cf-9489-4bf1-9d7b-014d864cf71f}|
+|          6   Microsoft-Windows-ProcessStateManager  4               0               {d49918cf-9489-4bf1-9d7b-014d864cf71f}|
+|          2   Microsoft-Windows-ProcessStateManager  103             0               {d49918cf-9489-4bf1-9d7b-014d864cf71f}|
+|          2   Microsoft-Windows-COMRuntime  2               0               {bf406804-6afa-46e7-8a48-6c357e1d6d61}|
+|          4   Microsoft-JScript    3               0               {57277741-3638-4a4b-bdba-0ac6e45da56c}|
+|          4   Microsoft-JScript    4               0               {57277741-3638-4a4b-bdba-0ac6e45da56c}|
+|       7472   Microsoft-JScript    5               0               {57277741-3638-4a4b-bdba-0ac6e45da56c}|
+|       3712   Microsoft-JScript    6               0               {57277741-3638-4a4b-bdba-0ac6e45da56c}|
+|          2   Microsoft-JScript    8               0               {57277741-3638-4a4b-bdba-0ac6e45da56c}|
+|      27718   Microsoft-JScript    9               0               {57277741-3638-4a4b-bdba-0ac6e45da56c}|
+|         39   Microsoft-JScript    39              0               {57277741-3638-4a4b-bdba-0ac6e45da56c}|
+|          4   Microsoft-JScript    40              0               {57277741-3638-4a4b-bdba-0ac6e45da56c}|
+|          1   Microsoft-JScript    41              0               {57277741-3638-4a4b-bdba-0ac6e45da56c}|
+|        287   Microsoft-Windows-Kernel-EventTracing  18              0               {b675ec37-bdb6-4648-bc92-f3fdc74d3ca2}|
+|          2   Microsoft-Windows-ReadyBoostDriver  8               1               {2a274310-42d5-4019-b816-e4b8c7abe95c}|
+|          2   Microsoft-Windows-ReadyBoostDriver  20              1               {2a274310-42d5-4019-b816-e4b8c7abe95c}|
+|      69984   Microsoft-Windows-DotNETRuntimeRundown 144             1               {a669021c-c450-4609-a035-5af59af4df18}|
+|      14938   Microsoft-Windows-DotNETRuntimeRundown 144             2               {a669021c-c450-4609-a035-5af59af4df18}|
+|         32   Microsoft-Windows-DotNETRuntimeRundown 146             1               {a669021c-c450-4609-a035-5af59af4df18}|
+|         32   Microsoft-Windows-DotNETRuntimeRundown 148             1               {a669021c-c450-4609-a035-5af59af4df18}|
+|      14834   Microsoft-Windows-DotNETRuntimeRundown 150             0               {a669021c-c450-4609-a035-5af59af4df18}|
+|      66690   Microsoft-Windows-DotNETRuntimeRundown 150             1               {a669021c-c450-4609-a035-5af59af4df18}|
+|       1590   Microsoft-Windows-DotNETRuntimeRundown 152             1               {a669021c-c450-4609-a035-5af59af4df18}|
+|       1674   Microsoft-Windows-DotNETRuntimeRundown 154             2               {a669021c-c450-4609-a035-5af59af4df18}|
+|       1674   Microsoft-Windows-DotNETRuntimeRundown 156             1               {a669021c-c450-4609-a035-5af59af4df18}|
+|         52   Microsoft-Windows-DotNETRuntimeRundown 158             1               {a669021c-c450-4609-a035-5af59af4df18}|
+|         32   Microsoft-Windows-DotNETRuntimeRundown 187             0               {a669021c-c450-4609-a035-5af59af4df18}|
+|          1   Microsoft-Windows-UserModePowerService 1               0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 2               0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|        178   Microsoft-Windows-UserModePowerService 3               1               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|        178   Microsoft-Windows-UserModePowerService 4               1               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 8               0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 9               0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 10              0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 11              0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 12              0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 15              0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          8   Microsoft-Windows-UserModePowerService 16              1               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|        246   Microsoft-Windows-UserModePowerService 17              1               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 27              0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 28              1               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|        100   Microsoft-Windows-UserModePowerService 49              1               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          2   Microsoft-Windows-UserModePowerService 50              1               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 52              0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|         16   Microsoft-Windows-UserModePowerService 59              0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|          1   Microsoft-Windows-UserModePowerService 62              0               {ce8dee0b-d539-4000-b0f8-77bed049c590}|
+|         60   SystemConfig         0               2               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|        342   SystemConfig         0               3               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|        251   SystemConfig         0               5               {01853a65-418f-4f36-aefc-dc0f1d2fd235}|
+|          3                        0               0               {ed54dff8-c409-4cf6-bf83-05e1e61a09c4}|
++---------------------------------------------------------------------------------------------------------+

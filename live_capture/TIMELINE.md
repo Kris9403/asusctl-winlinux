@@ -1497,3 +1497,63 @@ originally recommended for catching the live first-touch handshake, not
 the 4.99 GB Full Package. So `usbpcap3_35min_v2.pcapng` (249,980 B)
 should contain the actual bootstrapper-driven install + live device
 detection traffic this experiment was after from the start.
+
+## Broad WPR kernel trace -- sixth method, same negative result (2026-08-16 14:16 IST)
+
+Follow-up after the named-provider ETW trace above came back negative:
+user relayed that the Linux side "didn't find our findings helpful,
+suggested for kernel level trace" -- read as the narrower attempt not
+being convincing enough, since it depended on guessing the right
+provider name up front (`AccessBroker` producing literally nothing was
+ambiguous: genuinely inactive, or just the wrong name?). This time, no
+guessing: a broad Windows Performance Recorder capture using the classic
+kernel-logger profiles (`GeneralProfile` + `CPU` + `FileIO` + `Registry`
++ `Handle`) captures essentially everything the kernel logs, then the
+result gets searched afterwards for our device instead of betting on a
+provider name in advance.
+
+Full method, the false-positive lesson from the first search pass, and
+the complete category breakdown:
+[software_investigation/wpr/README.md](../software_investigation/wpr/README.md).
+
+Short version: 6.9 million total events captured across a real mode
+change. Searching for the device (`VID_0B05`/`PID_19B6`) narrowed to 267
+genuine matches (after ruling out ~1400 false positives from a
+coincidental hex substring in unrelated `DiskIo` pointer values -- same
+class of mistake as the earlier `kernel32!DeviceIoControl` forwarder
+miss, logged again here as a repeat lesson). All 267 matches break down
+into three flavors, none of them a per-request I/O event:
+
+- ~240 `Object` (CloseHandle/HandleDCEnd) -- handle lifecycle bookkeeping
+  from several already-exited PIDs, no I/O payload.
+- 13 `Microsoft-Windows-Kernel-Power` -- a PnP device-tree power-state
+  snapshot listing every collection's bound driver (`kbdhid`, `mouhid`,
+  `WUDFRd`, `HidUsb`, `usbccgp`).
+- 13 `SystemConfig` -- the kernel logger's own PnP device inventory,
+  friendly names and driver stack paths per collection.
+- 1 `FileIo`, checked individually -- not a write, no HID path in it.
+
+Also explicitly checked, since they're the categories most likely to
+carry real I/O detail: zero `FileIo` events anywhere in the full 6.9M
+are both a write operation *and* reference the device; zero of the 675
+`WdfTraceLoggingProvider` events (the WDF framework-level provider
+`hidclass.sys` itself would use) mention the device's VID/PID at all.
+
+**Sixth independent method (two corrected WinDbg breakpoints, Process
+Monitor, handle enumeration, named-provider ETW, and now this broad
+kernel trace), same result every time**: every device-specific event
+found across all six methods is some flavor of inventory, rundown, or
+lifecycle bookkeeping -- never a discrete event carrying the actual
+`SET_REPORT`/`IOCTL_HID_SET_FEATURE` write. This is now treated as the
+practical ceiling of what's traceable from the Windows side without a
+kernel debugger and driver symbols: the write happens inside a boundary
+(most likely the `Windows.Devices.Lights.LampArray` broker's own
+compiled code) that conventional tracing -- including a genuinely broad,
+non-provider-guessing kernel trace -- cannot see past.
+
+Raw files (`wpr_broad_trace.etl` 978MB, `wpr_broad_trace.csv` 3.76GB)
+excluded from git, too large. Filtered extract committed instead:
+[wpr/wpr_device_matches.csv](../software_investigation/wpr/wpr_device_matches.csv)
+(267 rows) and
+[wpr/wpr_broad_summary.txt](../software_investigation/wpr/wpr_broad_summary.txt)
+(tracerpt's own per-provider event-count summary).
